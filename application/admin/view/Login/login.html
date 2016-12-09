@@ -1,0 +1,51 @@
+{include file='Common/header'}
+
+<style type="text/css">
+    .tpl-login-content{     margin: 3% auto 0; }
+</style>
+
+<body data-type="login">
+    {load href="/public/assets/js/theme.js"}
+   
+    <div class="am-g tpl-g">
+       
+        <div class="tpl-login">
+            <div class="tpl-login-content">
+                <div class="tpl-login-logo">
+
+                </div>
+
+                <form class="am-form tpl-form-line-form" action="" method="post">
+                    <div class="am-form-group">
+                        <input type="text" class="tpl-form-input" id="user-name" placeholder="请输入账号" name="username" value="{$user}">
+
+                    </div>
+
+                    <div class="am-form-group">
+                        <input type="password" class="tpl-form-input" id="user-name" placeholder="请输入密码"
+                        name="pwd" value=""> 
+
+                    </div>
+                    <div class="am-form-group tpl-login-remember-me">
+                        <input id="remember-me" type="checkbox" name="remember">
+                        <label for="remember-me">
+                        记住密码    <span style="color:red">{$error}</span>
+                        </label>
+                    </div>
+
+                    <div class="am-form-group">
+
+                        <button type="submit" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {load href="/public/assets/js/amazeui.min.js"}
+    {load href="/public/assets/js/app.js"}
+    
+
+</body>
+
+</html>
