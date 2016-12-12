@@ -23,4 +23,21 @@ class Admin extends Controller
 			exit;
 		}
 	}
+
+	public function  res($res,$success=null,$error=null){
+		if( isset($res) ){
+			$this->success($success ? $success : '操作成功！');
+		}else{
+			$this->error($success ? $success : '操作失败！');
+		}
+	}
+
+	public function validation($name ,$msg=null){
+		$name = input('param.'.$name);
+		if( !empty($name) ){
+			return $name;
+		}else{
+			$this->error($msg ? $msg : '发生错误');
+		}
+	}
 }

@@ -3,7 +3,7 @@
             <div class="tpl-sidebar-user-panel">
                 <div class="tpl-user-panel-slide-toggleable">
                     <div class="tpl-user-panel-profile-picture">
-                        <img src="/public/assets/img/user04.png" alt="">
+                        <img src="{:img($Think.session.img)}" alt="">
                     </div>
                 </div>
                 <span class="user-panel-logged-in-text">{$Think.session.user}</span>
@@ -56,7 +56,7 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="{:url('news/index')}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文章管理
                             </a>
                         </li>

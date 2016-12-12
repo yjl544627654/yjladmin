@@ -24,14 +24,41 @@ class UserModel extends Model
 		
 	}
 
-	function getList(){
-		$list =  $this->paginate(2);
+	function getList($num = 20){
+		$list =  $this->paginate($num);
 		return $list;
 	}
 
 	function getOneUser($id){
-		//return DB::table($this->table)->where('id',$id)->find();
 		return $this->where('id',$id)->find()->toArray();
+	}
+
+	public function editUser($data,$where){
+		return $this->save($data,$where);
+	}
+
+	public function getUserImg($user){
+		return $this->where('username',$user)->value('img');
+	}
+
+	public function getUserHash($id){
+		return $this->where('id',$id)->value('hash');
+	}
+
+	public function CheckUserName($name){
+		$username = $this->where('username',$name)->value('username');
+		if( !empty($username) ){
+			return $username;
+		}else{
+			return false;
+		}
+	}
+	public function addUser($data){
+		return $this->insertGetId($data);
+	}
+
+	public function delUser($id){
+		return $this->where('id',$id)->delete($id);
 	}
 	
 }

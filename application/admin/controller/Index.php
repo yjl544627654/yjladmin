@@ -52,6 +52,9 @@ class Index extends Admin
         //删除数据
         //$ret = DB::name('log')->where('id','181')->delete();
 
+        //定义查询字段
+        //->field()
+
 
         dump($ret);
         

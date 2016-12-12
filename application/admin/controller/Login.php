@@ -18,12 +18,15 @@ class Login extends Admin
 				$user = $url->post('username');
 				$pwd = $url->post('pwd');
 
-				$userdb = new User;
+				$userdb = new Usermodel;
 				$ret = $userdb->CheckLogin($user,$pwd);
 				if( $ret == true ){
+
+					$img = $userdb->getUserImg($user);
+
 					Session::set('user',$user);
 					Session::set('is_login',true);
-					
+					Session::set('img',$img);
 					//var_dump(Session::has('user'));exit;
 
 					$this->success('登录成功！',url('index/index') );
@@ -46,6 +49,7 @@ class Login extends Admin
 
 		Session::delete('user');
 		Session::delete('is_login');
+		Session::delete('img');
 
 		$this->success('退出成功！',url('index/index') );
 	}
