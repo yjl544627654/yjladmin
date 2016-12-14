@@ -1,0 +1,113 @@
+{extend name='base' /}
+
+{block name='main'}
+
+    <div class="tpl-content-wrapper">
+            <div class="row-content am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title  am-cf">导航设置</div>
+
+                            </div>
+                            <div class="widget-body  am-fr">
+
+                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-9">
+                                    <div class="am-form-group">
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <button type="button" class="am-btn am-btn-default am-btn-success" onclick='jump("{:url('setting/nav_add')}")'><span class="am-icon-plus"></span> 新增</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
+                                    <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
+                                        <input type="text" class="am-form-field ">
+                                        <span class="am-input-group-btn">
+            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+          </span>
+                                    </div>
+                                </div>
+
+                                <div class="am-u-sm-12">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>导航名</th>
+                                                <th>排序</th>
+                                                <th>状态</th>
+                                                <th>添加时间</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name='list' id='nav' }
+                                            <tr class="gradeX">
+                                                <td>{$nav.id}</td>
+                                                <td>{$nav.name}</td>
+                                                <td>{$nav.sort}</td>
+                                                <td>{eq name="$nav.status" value="1" } 正常 {else /} 禁用{/eq}
+                                                </td>
+                                                <td>{$nav.ctime|date="Y-m-d",###}</td>
+
+                                                <td>
+                                                    <div class="tpl-table-black-operation">
+                                                        <a href="nav_edit?id={$nav.id}">
+                                                            <i class="am-icon-pencil"></i> 编辑
+                                                        </a>
+                                                        <a href="nav_del?id={$nav.id}" class="tpl-table-black-operation-del">
+                                                            <i class="am-icon-trash"></i> 删除
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            {volist name='lastlist' id='list2'}
+                                                {eq name="$list2.nav_id" value="$nav.id" } 
+                                                <tr class="gradeX">
+                                                    <td>{$nav.id}</td>
+                                                    <td> &nbsp;&nbsp;&nbsp;&nbsp;┝ &nbsp;{$list2.name}</td>
+                                                    <td>{$list2.sort}</td>
+                                                    <td>{eq name="$list2.status" value="1" } 正常 {else /} 禁用{/eq}
+                                                    </td>
+                                                    <td>{$list2.ctime|date="Y-m-d",###}</td>
+
+                                                    <td>
+                                                        <div class="tpl-table-black-operation">
+                                                            <a href="nav_edit?id={$list2.id}">
+                                                                <i class="am-icon-pencil"></i> 编辑
+                                                            </a>
+                                                            <a href="nav_del?id={$list2.id}}" class="tpl-table-black-operation-del">
+                                                                <i class="am-icon-trash"></i> 删除
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {/eq}
+                                            {/volist}
+                                        {/volist}
+                                            <!-- more data -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="am-u-lg-12 am-cf">
+                                    <div class="am-fr">
+                                    {$page}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{/block}

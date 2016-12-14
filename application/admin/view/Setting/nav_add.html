@@ -1,0 +1,135 @@
+{extend name='base' /}
+
+{block name='main'}
+
+    <div class="tpl-content-wrapper">
+
+            <div class="container-fluid am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 新增导航 </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-content am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">新增导航</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body am-fr">
+
+                                <form class="am-form tpl-form-border-form tpl-form-border-br" method="post" enctype="multipart/form-data">
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">上级导航</label>
+                                        <div class="am-u-sm-9">
+                                             <select data-am-selected="" style="display: none;" name='nav_id'>
+                                             <option value="0" >顶级导航</option>
+                                             {volist name="list" id="navlist"}
+                                              <option value="{$navlist.id}" >{$navlist.name}</option>
+                                                {volist name='lastlist' id='list2'}
+                                                    {eq name="$list2.nav_id" value="$navlist.id" } 
+                                                    <option value="{$list2.id}" >
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;┝ &nbsp;{$list2.name}
+                                                    </option>
+                                                    {/eq}
+                                                {/volist}
+
+                                             {/volist}
+
+                                        </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label class="am-u-sm-3 am-form-label">导航名</label>
+                                        <div class="am-u-sm-9">
+
+
+                                            <input type="text" placeholder="输入导航名" value="" name="name">
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="user-intro" class="am-u-sm-3 am-form-label">是否开启</label>
+                                        <div class="am-u-sm-9">
+                                            <div class="tpl-switch">
+                                                <input type="checkbox" class="ios-switch bigswitch tpl-switch-btn"  name="status" checked="" >
+                                                <div class="tpl-switch-btn-view">
+                                                    <div>
+                                                    </div>
+                                                </div>
+                                                <small>关闭将不可见</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">导航类型</label>
+                                        <div class="am-u-sm-9">
+                                            <div class="radio-inline cui-control cui-radio">
+                                                <label for="typelink">
+                                                    <input type="radio" id="typelink" class="radio" name="type" value="link" onclick="$('#link_c').show(); $('#page_c').hide();" checked="" > 
+                                                    <span class="cui-control-indicator"></span>
+                                                    <span>链接</span>
+                                                </label>
+                                                &nbsp;&nbsp;&nbsp;
+                                                 <label for="page">
+                                                    <input type="radio" id="page" class="radio" name="type" value="page" onclick="$('#link_c').hide(); $('#page_c').show();"  > 
+                                                    <span class="cui-control-indicator"></span>
+                                                    <span>单页面</span>
+                                                </label>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group" id="link_c">
+                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">链接地址</label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" id="user-weibo" placeholder="http地址或者TP路由" value="{$nav.link}" name="link">
+                                        </div>
+                                    </div>
+
+                                     <div class="am-form-group" id="page_c" style="display:none">
+                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">单页内容</label>
+                                        <div class="am-u-sm-9">
+                                            <script id="editor" type="text/plain" style="width:100%;height:500px;">{$nav.content}</script>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group" >
+                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">排序</label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" id="user-weibo" placeholder="" value="{$nav.sort}" name="sort">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="am-form-group">
+                                        <div class="am-u-sm-9 am-u-sm-push-3">
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+{load href='/public/assets/css/ueditor.config.js'}
+{load href='/public/assets/js/ueditor.config.js'}
+{load href='/public/assets/js/ueditor.all.min.js'}
+{load href='/public/assets/js/lang/zh-cn/zh-cn.js'}
+
+<script type="text/javascript">
+    var ue = UE.getEditor('editor');
+
+</script>
+
+{/block}

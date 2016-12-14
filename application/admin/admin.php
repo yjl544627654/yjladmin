@@ -32,7 +32,7 @@ class Admin extends Controller
 		}
 	}
 
-	public function validation($name ,$msg=null){
+	public function validata($name ,$msg=null){
 		$name = input('param.'.$name);
 		if( !empty($name) ){
 			return $name;

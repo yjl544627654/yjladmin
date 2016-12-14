@@ -6,7 +6,7 @@
                         <img src="{:img($Think.session.img)}" alt="">
                     </div>
                 </div>
-                <span class="user-panel-logged-in-text">{$Think.session.user}</span>
+                <span class="user-panel-logged-in-text"> <i class="am-icon-user sidebar-nav-link-logo"></i> {$Think.session.user}</span>
             </div>
 
 
@@ -14,26 +14,33 @@
             <ul class="sidebar-nav">
                 
                 <li class="sidebar-nav-link">
-                    <a href="{:url('index/index')}">
+                    <a href="{:url('index/index')}" class="active" >
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 系统
+                        <i class="am-icon-gears sidebar-nav-link-logo"></i> 系统
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="table-list.html">
+                            <a href="{:url('setting/site')}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 站点设置
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="sidebar-nav sidebar-nav-sub">
+                        <li class="sidebar-nav-link">
+                            <a href="{:url('setting/nav')}">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 导航设置
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 用户
+                        <i class="am-icon-group sidebar-nav-link-logo"></i> 用户
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
@@ -51,7 +58,7 @@
                 </li>
                  <li class="sidebar-nav-link">
                     <a href="javascript:;" class="sidebar-nav-sub-title">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 资讯
+                        <i class="am-icon-pencil-square-o sidebar-nav-link-logo"></i> 资讯
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
@@ -60,30 +67,14 @@
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文章管理
                             </a>
                         </li>
+                        <li class="sidebar-nav-link">
+                            <a href="{:url('news/cate')}">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 分类管理
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li class="sidebar-nav-link">
-                    <a href="tables.html" class="active">
-                        <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
-                    </a>
-                </li>
                 
-                <li class="sidebar-nav-link">
-                    <a href="sign-up.html">
-                        <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
-                        <span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="login.html">
-                        <i class="am-icon-key sidebar-nav-link-logo"></i> 登录
-                    </a>
-                </li>
-                <li class="sidebar-nav-link">
-                    <a href="404.html">
-                        <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
-                    </a>
-                </li>
 
             </ul>
         </div>
