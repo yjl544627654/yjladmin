@@ -1917,3 +1917,6 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
 .pagination li a{ border:solid #ddd 1px; margin: 5px; padding: 5px 10px; border-radius: 3px; }
 .pagination li span{ border:solid #ddd 1px; margin: 5px; padding: 5px 10px; border-radius: 3px;  }
 .pagination .active span{ background: #23abf0; color: #fff; border:0px; }
+
+/* 广告设置 列表的图片*/
+.img_show{ position: absolute; z-index: 99;}

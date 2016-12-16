@@ -8,7 +8,8 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title  am-cf">文章管理</div>
+                                <div class="widget-title  am-cf">产品中心</div>
+
                             </div>
                             <div class="widget-body  am-fr">
 
@@ -16,19 +17,15 @@
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success" onclick="jump('{:url("news/add")}')"><span class="am-icon-plus"></span> 新增</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-success" onclick='jump("{:url('product/add')}")'><span class="am-icon-plus"></span> 新增</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
                                     <div class="am-form-group tpl-table-list-select">
-                                        <select data-am-selected style="display: none;" name="cate">
-                                          <option value="">选择分类</option>
-                                          {volist name="cate" id='catelist'}
-                                            <option value="{$catelist.id}">{$catelist.cate_name}</option>
-                                          {/volist}
+                                        <select data-am-selected="{btnSize: 'sm'}" style="display: none;">
+                                          <option value="option1">所有类别</option>
                                         </select>
                                     </div>
                                 </div>
@@ -42,34 +39,31 @@
                                 </div>
 
                                 <div class="am-u-sm-12">
-                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r" style="position: relative; ">
                                         <thead>
                                             <tr>
-                                                <th>文章ID</th>
-                                                <th>标题</th>
-                                                <th>摘要</th>
+                                                <th>相册首页图</th>
+                                                <th>相册名</th>
+                                                <th>简介</th>
                                                 <th>排序</th>
                                                 <th>添加时间</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {volist name='list' id='new' }
+                                        {volist name='list' id='lists' }
                                             <tr class="gradeX">
-                                                <td>{$new.id}</td>
-                                                <td>{$new.title}</td>
-                                                <td>{$new.e_title}</td>
-                                                <td>{$new.sort}</td>
-                                                <td>{$new.addtime|date="Y-m-d",###}</td>
+                                                <td><img src="/public/assets/img/adver/{$adver.img}" width="30" height="30"></td>
+                                                <td>{$lists.name}</td>
+                                                <td>{$lists.content}</td>
+                                                <td>{$lists.sort}</td>
+                                                <td>{$lists.addtime|date="Y-m-d",###}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="edit?id={$new.id}">
+                                                        <a href="edit?id={$lists.id}">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
-                                                        <a href="product?id={$new.id}">
-                                                            <i class="am-icon-pencil"></i> 查看相册
-                                                        </a>
-                                                        <a href="del?id={$new.id}}" class="tpl-table-black-operation-del">
+                                                        <a href="del?id={$lists.id}}" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>

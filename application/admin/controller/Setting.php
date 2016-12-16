@@ -5,9 +5,7 @@ use \think\Db;
 use \app\admin\model\SettingModel;
 use \app\admin\model\NavModel;
 use \app\admin\model\NavPageModel;
-/**
-* 
-*/
+
 class Setting extends Admin
 {
 	
@@ -22,8 +20,6 @@ class Setting extends Admin
 			$this->res($set_db->updateSetAll($data));
 
 		}else{
-
-			//$list = $set_db->getAll()->toArray();
 
 			$arr = DB::name('setting')->select();
 
@@ -48,12 +44,15 @@ class Setting extends Admin
 		if($info){
 			$img_path = '/'.$path.$info->getSaveName();
 		}else{
+			//上传失败 返回失败信息
 			$msg = $file->getError();
 		}
+
 		if( !isset($msg) ){
 			$map['key'] = $filename;
 			$data['value'] = $img_path;
 			$ret = $set_db->updateOne($map,$data);
+			SettingModel::updateSetting($filename);
 			
 			$res['status'] = 1;
 			$res['img_path'] = $img_path;
