@@ -23,5 +23,11 @@ class ProductModel extends Model
 		return $this->where($where)->find();
 	}
 
+	function getPhoto($id){
+
+		return $this->where('is_index = 0 and p_id='.$id)->order('sort','DESC')->paginate(20);
+	}
+
+
 	
 }

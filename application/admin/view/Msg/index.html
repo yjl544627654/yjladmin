@@ -8,27 +8,21 @@
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
                             <div class="widget-head am-cf">
-                                <div class="widget-title  am-cf">产品中心</div>
+                                <div class="widget-title  am-cf">留言管理</div>
 
                             </div>
                             <div class="widget-body  am-fr">
 
-                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-9">
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success" onclick='jump("{:url('product/add')}")'><span class="am-icon-plus"></span> 新增</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
-                                    <div class="am-form-group tpl-table-list-select">
-                                        <select data-am-selected="{btnSize: 'sm'}" style="display: none;">
-                                          <option value="option1">所有类别</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
                                         <input type="text" class="am-form-field ">
@@ -39,34 +33,31 @@
                                 </div>
 
                                 <div class="am-u-sm-12">
-                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r" style="position: relative; ">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
                                         <thead>
                                             <tr>
-                                                <th>相册首页图</th>
-                                                <th>相册名</th>
-                                                <th>简介</th>
-                                                <th>排序</th>
+                                                <th>ID</th>
+                                                <th>用户名</th>
+                                                <th>留言</th>
+                                                <th>联系电话</th>
                                                 <th>添加时间</th>
                                                 <th>操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {volist name='list' id='lists' }
+                                        {volist name='list' id='msg' }
                                             <tr class="gradeX">
-                                                <td><img src="/public/assets/img/product/{$lists.img}" width="100"></td>
-                                                <td>{$lists.name}</td>
-                                                <td>{$lists.content}</td>
-                                                <td>{$lists.sort}</td>
-                                                <td>{$lists.addtime|date="Y-m-d",###}</td>
+                                                <td>{$msg.id}</td>
+                                                <td>{$msg.username}</td>
+                                                <td>{$msg.content}</td>
+                                                <td>{$msg.tel}</td>
+                                                <td>{$msg.addtime|date="Y-m-d",###}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
-                                                        <a href="p_index?id={$lists.id}">
-                                                            <i class="am-icon-pencil"></i> 管理相册
-                                                        </a>
-                                                        <a href="edit?id={$lists.id}">
+                                                        <a href="edit?id={$msg.id}">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
-                                                        <a href="del?id={$lists.id}" class="tpl-table-black-operation-del">
+                                                        <a href="del?id={$msg.id}" class="tpl-table-black-operation-del" onclick="return confirm('确定要删除吗'); ">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>

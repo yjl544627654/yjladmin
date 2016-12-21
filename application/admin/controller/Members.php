@@ -1,75 +1,77 @@
 <?php
 namespace app\admin\controller;
 use \app\admin\admin;
-use \think\Db; 
-use \app\admin\model\UserModel;
-use \app\admin\model\UserGroupModel;
+use \app\admin\model\MemberModel;
 
 
-class User extends Admin
+class Members extends Admin
 {
 	
-	function index(){
-		
-		$user_db = new UserModel;
+	public function index(){
 
-		$list = $user_db->getList();
-		
+		$db = new MemberModel;
+		$name = input('get.name');
+		if( isset($name) ){
+			$map['username'] = ['like',"%$name%"];
+		}
+		$list = $db->where($map)->paginate(10);
 		$page = $list->render();
-		
-		$this->assign('page',$page);
+
 		$this->assign('list',$list);
+		$this->assign('page',$page);
 		return $this->fetch();
 	}
 
-	function add(){
+
+	public function add(){
+		$db = new MemberModel;
 
 		if( request()->isPost() ){
-			$user_db = new UserModel;
+
 			$user = input('post.username');
 			
 			if (empty($user)) {
 				$this->error('请输入用户名');
 			}else{
-				$user_db->CheckUserName($user) ? $this->error('用户名已被使用'):'';
+				$db->CheckMembersName($user) ? $this->error('用户名已被使用'):'';
 			}
 			$pwd = input('post.pwd') ? input('post.pwd') :$this->error('请输入密码');
-			$data['img'] = input('post.img');
 			$data['hash'] = randstr();
 			$data['pwd'] = md5($pwd.$data['hash']);
 			$data['username'] = $user; 
-			$data['uid'] = input('post.uid') ;
-			$data['emali'] = input('post.emali');
+			$data['emali'] = input('post.emali') ;
 			$data['mark'] = input('post.mark');
 			$data['truename'] = input('post.truename');
 			$data['status'] = input('post.status')=='on'? 1 :0;
 			$data['addtime'] = time();
+			$data['img'] = input('post.img');
 
-			$this->res($user_db->addUser($data));exit;
+			$ret = $db->insert($data);
 
-			
+			if ($ret) {
+				$this->success('添加用户成功','index');
+			}else{
+				$this->error('添加失败');
+			}
+
+
 		}else{
-
-			$group_db = new UserGroupModel;
-
-			$group = $group_db->getGroup();
-
-			$this->assign('group',$group);
 			return $this->fetch();
 		}
+		
 	}
+	
 
-	function edit(){
+	public function edit(){
+		$db = new MemberModel;
 
-		$id = input('?get.id') ? input('get.id') : $this->error('参数错误');
-		$user_db = new UserModel;
+		$id = input('get.id') ? input('get.id') : $this->error('参数错误');
 
 		if( request()->isPost() ){ 
 			//提交post  input('files')
-			$user_hash = $user_db->getUserHash(input('get.id'));
+			$user_hash = $db->getMembersHash(input('get.id'));
 
 			$data['pwd'] = md5(input('post.pwd').$user_hash);
-			$data['uid'] = input('post.uid') ;
 			$data['truename'] = input('post.truename');
 			$data['emali'] = input('post.emali') ;
 			$data['mark'] = input('post.mark');
@@ -79,7 +81,7 @@ class User extends Admin
 
 			$map['id'] = input('get.id');
 
-			$ret = $user_db->editUser($data,$map);
+			$ret = $db->where($map)->update($data);
 			if ($ret) {
 				$this->success('操作成功','index');
 			}else{
@@ -89,28 +91,29 @@ class User extends Admin
 			
 		}else{
 
-			$group_db = new UserGroupModel;
+			$show = $db->where('id',$id)->find();
 
-			$group = $group_db->getGroup();
-
-			$show = $user_db->getOneUser($id);
-
-			$this->assign('group',$group);
 			$this->assign('user',$show);
-
 			return $this->fetch();
+		}
+
+	}
+
+	public function del(){
+		$db = new MemberModel;
+
+		$arr_id = $_POST['id'];
+		if( is_array($arr_id) ){
+			$this->res(MemberModel::destroy($arr_id));
+		}else{
+			$id = input('?get.id') ? input('get.id') : $this->error('参数错误');
+			$this->res($db->where('id',$id)->delete());
 		}
 		
 	}
 
-	public function del(){
-		$id = input('get.id') ? input('get.id') : $this->error('参数错误');
-		$user_db = new UserModel();
-		$this->res($user_db->delUser($id));
-	}
-
 	public function ajax_uploadimg(){
-		$db = new UserModel;
+		$db = new MemberModel;
 
 		$file = request()->file('files');
 		$path = 'public/assets/img/portrait/';
@@ -132,5 +135,5 @@ class User extends Admin
 			return $res;
 		}
 	}
-
+	
 }

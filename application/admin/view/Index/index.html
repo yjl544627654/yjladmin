@@ -75,34 +75,33 @@
                                     
                                     <tbody>
                                         <tr class="gradeX">
-                                            <td>yjladmin版本</td>
-                                            <td>{$data.yjladmin}</td>
+                                            <td>网站标题</td>
+                                            <td>{$data.site_title}</td>
                                         </tr>
                                         <tr class="even gradeC">
-                                            <td>ThinkPHP版本</td>
-                                            <td>{$data.Thinkphp_version}</td>
+                                            <td>网站描述</td>
+                                            <td>{$data.site_describe}</td>
                                         </tr>
                                         <tr class="gradeX">
-                                            <td>服务器操作系统</td>
-                                            <td>{$data.system}</td>
+                                            <td>网站关键字</td>
+                                            <td>{$data.site_key}</td>
                                         </tr>
                                         <tr class="even gradeC">
-                                            <td>运行环境</td>
-                                            <td>{$data.server}</td>
+                                            <td>版权信息</td>
+                                            <td>{$data.site_copyright}</td>
                                         </tr>
                                         <tr class="even gradeC">
-                                            <td>PHP版本</td>
-                                            <td>{$data.php_edition}</td>
+                                            <td>网站备案号</td>
+                                            <td>{$data.site_record}</td>
+                                        </tr>
+
+                                        <tr class="even gradeC" >
+                                            <td>网站状态</td>
+                                            <td>
+                                            {eq name="$data.set_site" value="on" } 正常 {else/ } 已关闭 {/eq}</td>
                                         </tr>
 
                                         <tr class="even gradeC">
-                                            <td>MYSQL版本</td>
-                                            <td>{$data.mysql_edition}</td>
-                                        </tr>
-
-                                        <tr class="even gradeC">
-                                            <td>网站网址</td>
-                                            <td>{$data.http}</td>
                                         </tr>
                                         <!-- more data -->
                                     </tbody>

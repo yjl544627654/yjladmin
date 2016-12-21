@@ -13,12 +13,11 @@
 
 //返回图片目录+文件
 function img($img = null){
-	if( isset($img) ){
+	if( !empty($img) ){
 		return '/public/assets/img/portrait/'.$img;
 	}else{
-		return '';
+		return '/public/assets/img/portrait/logo_user.png';
 	}
-	
 }
 
 //生成随机字符
@@ -32,4 +31,10 @@ function randstr($length=6)
   $hash.=$chars[mt_rand(0,$max)];   
   }   
   return $hash;   
+}
+
+function msg($msg){
+  $html =  '<script src="/public/assets/js/yjladmin.js"></script>
+            <script type="text/javascript"> msg("'.$msg.'") </script>';
+  return; 
 }

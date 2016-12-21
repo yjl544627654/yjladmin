@@ -6,7 +6,7 @@
                         <img src="{:img($Think.session.img)}" alt="">
                     </div>
                 </div>
-                <span class="user-panel-logged-in-text"> <i class="am-icon-user sidebar-nav-link-logo"></i> {$Think.session.user}</span>
+                <span class="user-panel-logged-in-text"> <i class="am-icon-user sidebar-nav-link-logo"></i> {$Think.session.user} </span>
             </div>
 
 
@@ -14,12 +14,12 @@
             <ul class="sidebar-nav">
                 
                 <li class="sidebar-nav-link">
-                    <a href="{:url('index/index')}" class="active" >
+                    <a href="{:url('index/index')}" id="index" >
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
-                <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                <li class="sidebar-nav-link" id="setting">
+                    <a href="javascript:;" class="sidebar-nav-sub-title" >
                         <i class="am-icon-gears sidebar-nav-link-logo"></i> 系统
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
@@ -38,26 +38,26 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                <li class="sidebar-nav-link" id="user">
+                    <a href="javascript:;" class="sidebar-nav-sub-title" >
                         <i class="am-icon-group sidebar-nav-link-logo"></i> 用户
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
                             <a href="{:url('user/index')}">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户管理
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 管理员管理
                             </a>
                         </li>
                         <li class="sidebar-nav-link">
-                            <a href="{:url('user/add')}">
-                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 添加用户
+                            <a href="{:url('members/index')}">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户管理
                             </a>
                         </li>
                     </ul>
                 </li>
-                 <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                 <li class="sidebar-nav-link" id="news">
+                    <a href="javascript:;" class="sidebar-nav-sub-title" >
                         <i class="am-icon-align-left sidebar-nav-link-logo"></i> 资讯
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
@@ -74,8 +74,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                <li class="sidebar-nav-link" id="adver">
+                    <a href="javascript:;" class="sidebar-nav-sub-title" >
                         <i class="am-icon-bookmark-o sidebar-nav-link-logo"></i> 广告设置
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
@@ -93,8 +93,8 @@
                     </ul>
                 </li>
 
-                <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                <li class="sidebar-nav-link" id="product">
+                    <a href="javascript:;" class="sidebar-nav-sub-title" >
                         <i class="am-icon-photo sidebar-nav-link-logo"></i> 产品中心
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
@@ -107,17 +107,17 @@
                     </ul>
                 </li>
 
-                <li class="sidebar-nav-link">
-                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                <li class="sidebar-nav-link" id="msg">
+                    <a href="javascript:;" class="sidebar-nav-sub-title " >
                         <i class="am-icon-pencil-square-o sidebar-nav-link-logo"></i> 评论留言
                         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
-                        <li class="sidebar-nav-link">
+                       <!--  <li class="sidebar-nav-link">
                             <a href="{:url('comments/index')}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户评论
                             </a>
-                        </li>
+                        </li> -->
                         <li class="sidebar-nav-link">
                             <a href="{:url('msg/index')}">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 留言中心
@@ -126,8 +126,25 @@
                     </ul>
                 </li>
 
-
-                
-
             </ul>
         </div>
+
+        <script type="text/javascript">
+            
+            var ctrl = '{$ctrl}';
+            if( ctrl == 'members' ){
+                left('user');
+            }else{
+                left(ctrl);
+            }
+            
+
+            function left(ctrl){
+                $('#'+ctrl+'>a').addClass('active');
+                $('#'+ctrl+'>a>span').addClass('sidebar-nav-sub-ico-rotate');
+                $('#'+ctrl+'>ul').show();
+            }
+            
+            
+        </script>
+

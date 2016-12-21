@@ -24,6 +24,8 @@ class Login extends Admin
 
 					$img = $userdb->getUserImg($user);
 
+					$user_id = $userdb->where('username',$user)->value('id');
+					Session::set('user_id',$user_id);
 					Session::set('user',$user);
 					Session::set('is_login',true);
 					Session::set('img',$img);

@@ -363,3 +363,4 @@ $('.sidebar-nav-sub-title').on('click', function() {
         .end()
         .find('.sidebar-nav-sub-ico').toggleClass('sidebar-nav-sub-ico-rotate');
 })
+

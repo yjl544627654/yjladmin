@@ -26,6 +26,7 @@ class Admin extends Controller
 		//获取ico 图标
 		$setting = SettingModel::getSetting('site_ico');
 		$this->assign('setting',$setting);
+		$this->assign('ctrl',$ctrl);
 	}
 
 	public function  res($res,$success=null,$error=null){

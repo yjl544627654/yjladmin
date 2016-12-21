@@ -3,11 +3,13 @@ namespace app\admin\controller;
 use \app\admin\admin;
 use \think\Db; 
 use \think\Request;
+use \app\admin\model\settingModel;
 
 class Index extends Admin
 {
     public function index()
     {
+
         $version = DB::query('select version() as ver');
 
         $data['yjladmin'] = 'v1.0';
@@ -18,8 +20,15 @@ class Index extends Admin
         $data['server'] = $_SERVER['SERVER_SOFTWARE'];
         $data['http'] =  $_SERVER["HTTP_HOST"];
 
-        //dump($data);exit;
+        $db = new settingModel;
+        $data['site_title'] = $db->getFirst('site_title');
+        $data['site_describe'] = $db->getFirst('site_describe');
+        $data['site_key'] = $db->getFirst('site_key');
+        $data['site_copyright'] = $db->getFirst('site_copyright');
+        $data['site_record'] = $db->getFirst('site_record');
+        $data['set_site'] = $db->getFirst('set_site');
 
+        //dump($data);exit;
         $this->assign('data',$data);
         return $this->fetch();
     }

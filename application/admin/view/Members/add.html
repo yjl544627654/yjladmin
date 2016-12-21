@@ -7,7 +7,8 @@
             <div class="container-fluid am-cf">
                 <div class="row">
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
-                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 修改管理员 </div>
+                        <div class="page-header-heading">
+                        <a href="{:url('index')}"><span class="am-icon-mail-reply page-header-heading-icon"></span> 用户列表 </a> / 添加用户 </div>
                     </div>
                 </div>
 
@@ -15,24 +16,17 @@
 
             <div class="row-content am-cf">
 
-               
-
                 <div class="row">
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
-                            <div class="widget-head am-cf">
-                                <div class="widget-title am-fl">{$user.username}</div>
-                                <div class="widget-function am-fr">
-                                    <a href="javascript:;" class="am-icon-cog"></a>
-                                </div>
-                            </div>
+                            
                             <div class="widget-body am-fr">
 
                                 <form class="am-form tpl-form-border-form tpl-form-border-br" method="post" enctype="multipart/form-data" id="form1">
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">用户名</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="user-name" value="{$user.username}" disabled="">
+                                            <input type="text" class="tpl-form-input" id="user-name" value="" name="username">
                                         </div>
                                     </div>
 
@@ -44,31 +38,20 @@
                                         </div>
                                     </div> -->
 
-                                    <div class="am-form-group">
-                                        <label for="user-phone" class="am-u-sm-3 am-form-label">权限 </label>
-                                        <div class="am-u-sm-9">
-                                        <select data-am-selected="{searchBox: 1}" style="display: none;" name='uid'>
-                                        {volist name='group' id='grouplist'}
-                                          <option value="{$grouplist.id}" {eq name="$user.uid" value="$grouplist.id" } selected="" {/eq}>{$grouplist.groupname}</option>
-                                        {/volist}
-                                          
-                                        </select>
-                                        </div>
-                                    </div>
 
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">邮箱</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" placeholder="输入您的邮箱" value="{$user.emali}" name="emali">
+                                            <input type="text" placeholder="输入您的邮箱" value="" name="emali">
                                         </div>
                                     </div>
 
-                                   <div class="am-form-group">
+                                     <div class="am-form-group">
                                         <label for="user-weibo" class="am-u-sm-3 am-form-label">添加头像 </label>
                                         <div class="am-u-sm-9">
                                             <div class="am-form-group am-form-file">
                                                 <div class="tpl-form-file-img">
-                                                    <img src="{notempty name='$user.img' }/public/assets/img/portrait/{$user.img} {/notempty}" alt="" id="img_show">
+                                                    <img src="" alt="" id="img_show">
                                                 </div>
                                                 <button type="button" class="am-btn am-btn-danger am-btn-sm">
                                                 <i class="am-icon-cloud-upload"></i> 添加封面图片</button>
@@ -78,19 +61,21 @@
 
                                         </div>
                                     </div>
+
                                     <div class="am-form-group">
                                         <label for="user-weibo" class="am-u-sm-3 am-form-label">身份（真实姓名）</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" id="user-weibo" placeholder="" value="{$user.truename}" name="truename">
+                                            <input type="text" id="user-weibo" placeholder="" value="" name="truename">
                                             <div>
 
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="am-form-group">
                                         <label for="user-weibo" class="am-u-sm-3 am-form-label">备注 </label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" id="user-weibo" placeholder="" value="{$user.mark}" name="mark">
+                                            <input type="text" id="user-weibo" placeholder="" value="" name="mark">
                                             <div>
 
                                             </div>
@@ -101,7 +86,7 @@
                                         <label for="user-intro" class="am-u-sm-3 am-form-label">是否禁用</label>
                                         <div class="am-u-sm-9">
                                             <div class="tpl-switch">
-                                                <input type="checkbox" class="ios-switch bigswitch tpl-switch-btn" {eq name="$user.status" value="1" }checked=""{/eq} name="status">
+                                                <input type="checkbox" class="ios-switch bigswitch tpl-switch-btn" name="status">
                                                 <div class="tpl-switch-btn-view">
                                                     <div>
                                                     </div>
@@ -110,13 +95,12 @@
 
                                         </div>
                                     </div>
-                                    <div class="am-form-group">
-                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">修改密码 </label>
+
+                                     <div class="am-form-group">
+                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">密码 </label>
                                         <div class="am-u-sm-9">
                                             <input type="password" id="user-weibo" placeholder="" name="pwd">
-                                            <small>不修改密码无需填写</small>
                                             <div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -135,14 +119,13 @@
             </div>
         </div>
 
-
-<script type="text/javascript">
+   <script type="text/javascript">
     
     function uploadimg(){
         
         var data = new FormData($('#form1')[0]); 
         $.ajax({  
-            url: '{:url("user/ajax_uploadimg")}',  
+            url: '{:url("members/ajax_uploadimg")}',  
             type: 'POST',  
             data: data, 
             dataType: 'JSON',  

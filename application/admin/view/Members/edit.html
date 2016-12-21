@@ -7,7 +7,7 @@
             <div class="container-fluid am-cf">
                 <div class="row">
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
-                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 修改管理员 </div>
+                        <div class="page-header-heading"><a href="{:url('index')}"><span class="am-icon-mail-reply page-header-heading-icon"></span> 用户列表 </a> / 修改管理员 </div>
                     </div>
                 </div>
 
@@ -44,17 +44,6 @@
                                         </div>
                                     </div> -->
 
-                                    <div class="am-form-group">
-                                        <label for="user-phone" class="am-u-sm-3 am-form-label">权限 </label>
-                                        <div class="am-u-sm-9">
-                                        <select data-am-selected="{searchBox: 1}" style="display: none;" name='uid'>
-                                        {volist name='group' id='grouplist'}
-                                          <option value="{$grouplist.id}" {eq name="$user.uid" value="$grouplist.id" } selected="" {/eq}>{$grouplist.groupname}</option>
-                                        {/volist}
-                                          
-                                        </select>
-                                        </div>
-                                    </div>
 
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">邮箱</label>
@@ -63,7 +52,7 @@
                                         </div>
                                     </div>
 
-                                   <div class="am-form-group">
+                                    <div class="am-form-group">
                                         <label for="user-weibo" class="am-u-sm-3 am-form-label">添加头像 </label>
                                         <div class="am-u-sm-9">
                                             <div class="am-form-group am-form-file">
@@ -78,6 +67,7 @@
 
                                         </div>
                                     </div>
+
                                     <div class="am-form-group">
                                         <label for="user-weibo" class="am-u-sm-3 am-form-label">身份（真实姓名）</label>
                                         <div class="am-u-sm-9">
@@ -134,15 +124,13 @@
 
             </div>
         </div>
-
-
 <script type="text/javascript">
     
     function uploadimg(){
         
         var data = new FormData($('#form1')[0]); 
         $.ajax({  
-            url: '{:url("user/ajax_uploadimg")}',  
+            url: '{:url("members/ajax_uploadimg")}',  
             type: 'POST',  
             data: data, 
             dataType: 'JSON',  
@@ -162,6 +150,5 @@
     }
 
 </script>
-
 
 {/block}
