@@ -4,7 +4,7 @@ use \app\admin\admin;
 use \think\Db; 
 use \app\admin\model\NewModel;
 use \app\admin\model\CategoryModel;
-
+use \think\Session;
 
 class News extends Admin
 {
@@ -12,13 +12,18 @@ class News extends Admin
 	public function index(){
 
 		$new_db = new NewModel;
-		$list = $new_db->getNew();
+		
 		$cate_db = new CategoryModel;
 
+		if( !empty(input('get.cate')) ){
+			$where = ['cate_id'=>input('get.cate')];
+		}
+		$list = $new_db->getNew($where);
 		$cate = $cate_db->getCate();
 
 		$this->assign('cate',$cate);
 		$this->assign('list',$list);
+		$this->assign('page',$list->render());
 		return $this->fetch();
 	}
 
@@ -35,6 +40,8 @@ class News extends Admin
 			$data['cate_id'] = $this->validata('uid','请选择分类');
 			$data['content'] = $this->validata('editorValue','填写内容');
 			$data['addtime'] = time();
+			$data['auth'] = input('post.auth') ? input('post.auth') : Session::get('user') ;
+			$data['sort'] = input('post.sort') ? input('post.sort') : 0;
 			$this->res($new_db->addNews($data));
 
 		}else{
@@ -57,6 +64,8 @@ class News extends Admin
 			$data['cate_id'] = $this->validata('uid','请选择分类');
 			$data['content'] = $this->validata('editorValue','填写内容');
 			$data['updatetime'] = time();
+			$data['auth'] = input('post.auth') ? input('post.auth') : Session::get('user') ;
+			$data['sort'] = input('post.sort') ? input('post.sort') : 0;
 
 			$map['id'] = $id;
 			$this->res($new_db->updateNew($map,$data));

@@ -11,7 +11,7 @@
                                 <div class="widget-title  am-cf">文章管理</div>
                             </div>
                             <div class="widget-body  am-fr">
-
+                            <form method="get">
                                 <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
                                     <div class="am-form-group">
                                         <div class="am-btn-toolbar">
@@ -27,7 +27,7 @@
                                         <select data-am-selected style="display: none;" name="cate">
                                           <option value="">选择分类</option>
                                           {volist name="cate" id='catelist'}
-                                            <option value="{$catelist.id}">{$catelist.cate_name}</option>
+                                            <option value="{$catelist.id}" {eq name='$catelist.id' value="$Think.get.cate"}selected{/eq}>{$catelist.cate_name}</option>
                                           {/volist}
                                         </select>
                                     </div>
@@ -36,10 +36,11 @@
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
                                         <input type="text" class="am-form-field ">
                                         <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
-          </span>
+                                            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="submit"></button>
+                                        </span>
                                     </div>
                                 </div>
+                                </form>
 
                                 <div class="am-u-sm-12">
                                     <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
@@ -47,7 +48,8 @@
                                             <tr>
                                                 <th>文章ID</th>
                                                 <th>标题</th>
-                                                <th>摘要</th>
+                                                <th>作者</th>
+                                                <th width="150">分类</th>
                                                 <th>排序</th>
                                                 <th>添加时间</th>
                                                 <th>操作</th>
@@ -57,17 +59,22 @@
                                         {volist name='list' id='new' }
                                             <tr class="gradeX">
                                                 <td>{$new.id}</td>
-                                                <td>{$new.title}</td>
-                                                <td>{$new.e_title}</td>
+                                                <td><a href="edit?id={$new.id}">{$new.title}</a></td>
+                                                <td>{$new.auth}</td>
+                                                {volist name="cate" id="catelist"}
+                                                {eq name='$catelist.id' value="$new.cate_id"}
+                                                <td>{$catelist.cate_name}</td>
+                                                {/eq}
+                                                {/volist}
                                                 <td>{$new.sort}</td>
                                                 <td>{$new.addtime|date="Y-m-d",###}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">
+                                                         <a href="{:url('home/index/portal_show')}?id={$new.id}" target="_blank" class="tpl-table-black-operation">
+                                                           查看
+                                                        </a>
                                                         <a href="edit?id={$new.id}">
                                                             <i class="am-icon-pencil"></i> 编辑
-                                                        </a>
-                                                        <a href="product?id={$new.id}">
-                                                            <i class="am-icon-pencil"></i> 查看相册
                                                         </a>
                                                         <a href="del?id={$new.id}}" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除

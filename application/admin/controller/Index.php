@@ -64,6 +64,12 @@ class Index extends Admin
         //定义查询字段
         //->field()
 
+        //分页
+        //->render()
+        //分页带url参数
+        //->paginate(3,false,['query' => ['id'=>$id]]);
+
+
 
         dump($ret);
         

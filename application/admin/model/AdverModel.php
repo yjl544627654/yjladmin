@@ -9,8 +9,8 @@ class AdverModel extends Model
 
 	protected $table = 'tp_advertising'; //数据库全名
 
-	function getAll($num=''){
-		return $this->order('sort','DESC')->paginate($num);
+	function getAll($num=10){
+		return $this->order('addtime','DESC')->paginate($num);
 	}
 
 	function getOne($where){
@@ -28,5 +28,9 @@ class AdverModel extends Model
 
 	function delAdver($where){
 		return $this->where($where)->delete();
+	}
+
+	function getBanner( $where ){
+		return $this->where($where)->select();
 	}
 }

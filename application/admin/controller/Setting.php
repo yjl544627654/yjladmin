@@ -173,8 +173,9 @@ class Setting extends Admin
 			$data['sort'] = input('sort');
 			$data['type'] = $type;
 			$data['ctime'] = time();
+			$data['route'] = $this->validata('link','请输入导航链接');
 
-			$nav_id = $nva_db->updataNav(['id'=>$id],$data);
+			$nav_id = $nva_db->updateNav(['id'=>$id],$data);
 			if( $type == 'page' ){
 				//单页面
 				if(  !isset($ishasPage) ){

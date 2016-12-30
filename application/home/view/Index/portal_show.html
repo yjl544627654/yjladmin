@@ -1,0 +1,123 @@
+{extend name='base' /}
+
+{block name='main'}
+
+
+<div id="wp" class="wp">
+    
+<script type="text/javascript">
+	zoomstatus = parseInt(1), imagemaxwidth = '600', aimgcount = new Array();
+</script>
+
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="index.php">首页</a> <em>›</em><a href="{:url('index/catelist')}?id={$loaction.id}">{$loaction.cate_name}</a>
+ <em>›</em>
+查看内容
+</div>
+</div>
+
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<div class="bm vw">
+<div class="h hm">
+<h1 class="ph">{$show.title}</h1>
+<p class="xg1">{:date('Y-m-d h:m:s',$show.addtime)}<span class="pipe">|</span>
+发布者:{$show.auth}<span class="pipe">|</span>
+查看: <em id="_viewnum">{$show.click}</em>
+</p>
+</div>
+
+<!--[diy=diysummarytop]--><div id="diysummarytop" class="area"></div><!--[/diy]-->
+
+<div class="s"><div><strong>摘要</strong>: {$show.e_title}</div></div>
+<!--[diy=diysummarybottom]--><div id="diysummarybottom" class="area"></div><!--[/diy]-->
+
+<div class="d">
+
+<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
+
+{$show.content}
+
+<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+
+<script src="static/js/home.js?Z3u" type="text/javascript"></script>
+<div id="click_div"><table cellpadding="0" cellspacing="0" class="atd">
+<tbody><tr></tr>
+</tbody></table>
+
+</div>
+
+
+<!--[diy=diycontentclickbottom]--><div id="diycontentclickbottom" class="area"></div><!--[/diy]-->
+
+</div>
+
+<div class="o cl ptm pbm"></div>
+<div class="pren pbm cl">
+<em>上一篇：
+{empty name="uplowdata.up"}
+	没有了
+{else /}
+<a href="{:url('index/portal_show')}?id={$uplowdata.up.id}">
+	{$uplowdata.up.title}
+</a>
+{/empty}
+
+</em>
+<em>下一篇：<a href="{:url('index/portal_show')}?id={$uplowdata.low.id}">
+	{$uplowdata.low.title}
+</a></em></div>
+</div>
+
+<!--[diy=diycontentrelatetop]--><div id="diycontentrelatetop" class="area"></div><!--[/diy]-->
+<!--[diy=diycontentrelate]--><div id="diycontentrelate" class="area"></div><!--[/diy]-->
+
+
+<!--[diy=diycontentcomment]--><div id="diycontentcomment" class="area"></div><!--[/diy]-->
+
+
+</div>
+<div class="sd pph">
+
+
+<div class="drag">
+<!--[diy=diyrighttop]--><div id="diyrighttop" class="area"></div><!--[/diy]-->
+</div>
+
+<div class="bm">
+<div class="bm_h cl">
+<h2>相关分类</h2>
+</div>
+<div class="bm_c">
+<ul class="xl xl2 cl">
+
+{volist name='catelist' id='list'}
+<li><a href="{:url('index/catelist')}?id={$list.id}">{$list.cate_name}</a></li>
+{/volist}
+
+</ul>
+</div>
+</div>
+
+<div class="drag">
+<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+</div>
+
+
+</div>
+</div>
+
+
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+<input type="hidden" id="portalview" value="1">	</div>
+
+
+
+{/block}

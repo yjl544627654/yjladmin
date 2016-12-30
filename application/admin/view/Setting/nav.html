@@ -40,6 +40,7 @@
                                                 <th>ID</th>
                                                 <th>导航名</th>
                                                 <th>排序</th>
+                                                <th>链接</th>
                                                 <th>状态</th>
                                                 <th>添加时间</th>
                                                 <th>操作</th>
@@ -51,6 +52,7 @@
                                                 <td>{$nav.id}</td>
                                                 <td>{$nav.name}</td>
                                                 <td>{$nav.sort}</td>
+                                                <td>{$nav.route}</td>
                                                 <td>{eq name="$nav.status" value="1" } 正常 {else /} 禁用{/eq}
                                                 </td>
                                                 <td>{$nav.ctime|date="Y-m-d",###}</td>

@@ -1,0 +1,270 @@
+{extend name='base' /}
+
+{block name='main'}
+{load href="/public/assets/js/jquery-2.0.3.min.js" /}
+<style type="text/css">
+  .frame, .frame-tab{
+    border: 0px;
+  }
+  .y{ line-height: 30px; }
+  .slidebar div{ padding: 0px; }
+</style>
+
+<div class="news_box">
+<div style="width: 100% ;margin-top: 10px;">
+<div id="diy2" class="area"><div id="frameTfnL3u" class=" frame move-span cl frame-3-1">
+<div class="frame-title title" style="background-image:none;background-repeat:repeat;background-color:transparent;">
+  <span class="titletext" style="font-size:24px;color:rgb(97, 97, 97);">
+    <img src="http://nnecps.com/template/ggfw/src/hangye.png" class="vm" alt="行业动态">行业动态
+  </span>
+ 
+</div>
+
+<div id="frameTfnL3u_left" class="column frame-3-1-l">
+<div id="portal_block_120" class="block move-span">
+<div id="portal_block_120_content" class="dxb_bc">
+<div class="hydt slidebox" style="display: block;" >
+  <ul class="hydt_ul slideshow">
+    {volist name="topbanner" id="list"}
+    <li class="hydt_li" style="display: none;" id="show_id_{$list.id}">
+      <a href="{$list.url}">
+        <img src="{$Think.LOAD}assets/img/adver/{$list.img}" width="860" height="400">
+        <span class="title">{$list.name}</span>
+      </a>
+    </li>
+    {/volist}
+
+    
+  </ul>
+<div class="slidebar">
+  {volist name="topbanner" id="list"}
+  <div id="hydt_img{$list.id}" class="" onclick="showImg('show_id_{$list.id}')">
+    <img src="{$Think.LOAD}assets/img/adver/{$list.img}" width="163" height="70">
+  </div>
+  {/volist}
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+<div id="frameTfnL3u_center" class="column frame-3-1-r">
+  <div id="frameTfnL3u_center_temp" class="move-span temp"></div>
+  <div id="portal_block_121" class="block move-span"><div id="portal_block_121_content" class="dxb_bc"> <div class="new-lie">
+    <div class="tit">
+      <h4>资讯排行</h4>
+    </div>
+      {volist name="orderlist" id="order"}
+        <a href="{:url('index/portal_show')}?id={$order.id}" target="_blank" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width:250px;"><span class="f1">{$order.num}</span> <b>{$order.title}</b></a><em class="y">{:date('m-d',$order.addtime)}</em>
+      {/volist}
+    </div></div>
+    </div>
+</div>
+</div>
+
+
+<div id="framenJUUcc" class="zddt frame move-span cl frame-1-1">
+    <div id="framenJUUcc_left" class="column frame-1-1-l">
+    <div id="portal_block_154" class="block move-span">
+    <div id="portal_block_154_content" class="dxb_bc" style="position: relative;"> 
+        <div class="kuang wth slidebox" id="0.23782453779747792" style="display: block;">
+            <div class="kuang-left">
+              <h4>网络支付<span class="subtitle" style="float:right"><a href="{:url('index/catelist')}?id=3" target="_blank" style="font-size:16px;color:#0c0c0c;">+more</a></span>
+              </h4>
+              <div class="slideshow">
+                  <div style="display: block;">
+                  {volist name="intpaylist" id="pay"}
+                    <dd>
+                      <a href="{:url('index/portal_show')}?id={$pay.id}">{$pay.title}</a><time>{:date('m-d',$order.addtime)}</time>
+                    </dd>
+                  {/volist}
+                  </div>
+              </div>
+            </div>
+         </div>
+    </div>
+    </div>
+    </div>
+
+    <div id="framenJUUcc_center" class="column frame-1-1-r">
+    <div id="portal_block_153" class="block move-span">
+    <div id="portal_block_153_content" class="dxb_bc" style="position: relative;"> 
+    <div class="kuang wth slidebox" id="0.7556205562934251" style="display: block;">
+        <div class="kuang-left">
+            <h4>新闻报道<span class="subtitle" style="float:right">
+              <a href="{:url('index/catelist')}?id=4" target="_blank" style="font-size:16px;color:#0c0c0c;">+more</a></span>
+            </h4>
+            <div class="slideshow">
+              <div style="display: block;">
+                 {volist name="newlist" id="new"}
+                    <dd>
+                      <a href="{:url('index/portal_show')}?id={$new.id}">{$new.title}</a><time>{:date('m-d',$new.addtime)}</time>
+                    </dd>
+                  {/volist}
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<div id="framenJUUcc" class="zddt frame move-span cl frame-1-1">
+    <div id="framenJUUcc_left" class="column frame-1-1-l">
+    <div id="portal_block_154" class="block move-span">
+    <div id="portal_block_154_content" class="dxb_bc" style="position: relative;"> 
+        <div class="kuang wth slidebox" id="0.23782453779747792" style="display: block;">
+            <div class="kuang-left">
+              <h4>电商实战<span class="subtitle" style="float:right"><a href="{:url('index/catelist')}?id=9" target="_blank" style="font-size:16px;color:#0c0c0c;">+more</a></span>
+              </h4>
+              <div class="slideshow">
+                  <div style="display: block;">
+                  {volist name="shizhanlist" id="list"}
+                    <dd>
+                      <a href="{:url('index/portal_show')}?id={$list.id}">{$list.title}</a><time>{:date('m-d',$list.addtime)}</time>
+                    </dd>
+                  {/volist}
+                  </div>
+              </div>
+            </div>
+         </div>
+    </div>
+    </div>
+    </div>
+
+    <div id="framenJUUcc_center" class="column frame-1-1-r">
+    <div id="portal_block_153" class="block move-span">
+    <div id="portal_block_153_content" class="dxb_bc" style="position: relative;"> 
+    <div class="kuang wth slidebox" id="0.7556205562934251" style="display: block;">
+        <div class="kuang-left">
+            <h4>跨境电商<span class="subtitle" style="float:right">
+              <a href="{:url('index/catelist')}?id=8" target="_blank" style="font-size:16px;color:#0c0c0c;">+more</a></span>
+            </h4>
+            <div class="slideshow">
+              <div style="display: block;">
+                 {volist name="kualist" id="list"}
+                    <dd>
+                      <a href="{:url('index/portal_show')}?id={$list.id}">{$list.title}</a><time>{:date('m-d',$list.addtime)}</time>
+                    </dd>
+                  {/volist}
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+<div id="framemW4o1w" class=" frame move-span cl frame-1">
+  <div id="framemW4o1w_left" class="column frame-1-c">
+    <div id="portal_block_122" class="block move-span">
+      <div id="portal_block_122_content" class="dxb_bc">
+          <div class="portal_block_summary">
+          <img src="{$Think.LOAD}/assets/img/adver/{$dianzi_heng.img}" width="100%">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="framenJUUcc" class="zddt frame move-span cl frame-1-1">
+    <div id="framenJUUcc_left" class="column frame-1-1-l">
+    <div id="portal_block_154" class="block move-span">
+    <div id="portal_block_154_content" class="dxb_bc" style="position: relative;"> 
+        <div class="kuang wth slidebox" id="0.23782453779747792" style="display: block;">
+            <div class="kuang-left">
+              <h4>农村电商<span class="subtitle" style="float:right"><a href="{:url('index/catelist')}?id=7" target="_blank" style="font-size:16px;color:#0c0c0c;">+more</a></span>
+              </h4>
+              <div class="slideshow">
+                  <div style="display: block;">
+                  {volist name="nonglist" id="list"}
+                    <dd>
+                      <a href="{:url('index/portal_show')}?id={$list.id}">{$list.title}</a><time>{:date('m-d',$list.addtime)}</time>
+                    </dd>
+                  {/volist}
+                  </div>
+              </div>
+            </div>
+         </div>
+    </div>
+    </div>
+    </div>
+
+    <div id="framenJUUcc_center" class="column frame-1-1-r">
+    <div id="portal_block_153" class="block move-span">
+    <div id="portal_block_153_content" class="dxb_bc" style="position: relative;"> 
+    <div class="kuang wth slidebox" id="0.7556205562934251" style="display: block;">
+        <div class="kuang-left">
+            <h4>政务信息<span class="subtitle" style="float:right">
+              <a href="{:url('index/catelist')}?id=6" target="_blank" style="font-size:16px;color:#0c0c0c;">+more</a></span>
+            </h4>
+            <div class="slideshow">
+              <div style="display: block;">
+                 {volist name="zhenwulist" id="list"}
+                    <dd>
+                      <a href="{:url('index/portal_show')}?id={$list.id}">{$list.title}</a><time>{:date('m-d',$list.addtime)}</time>
+                    </dd>
+                  {/volist}
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+<input type="hidden" name="show_delafut" id="show_delafut" value="{$show_delafut.id}">
+
+
+<div id="frame5xIrgq" class=" frame move-span cl frame-1">
+  <div id="frame5xIrgq_left" class="column frame-1-c">
+    <div id="portal_block_125" class="block move-span">
+      <div id="portal_block_125_content" class="dxb_bc">
+        <div class="ds-title wd">
+          <p>图文资讯</p> 
+          <a class="more" href="{:url('index/catelist')}?id=11"><img src="{$Think.LOAD}/home/img/icon_more.jpg"></a>
+        </div>
+        <div class="hy-tw wd">
+
+          {volist name="tuwen" id="list"}
+            <a href="{$list.url}">
+              <img src="{$Think.LOAD}/assets/img/adver/{$list.img}" width="270" height="175">
+            </a>
+          {/volist}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!--[/diy]-->
+
+</div>
+<div style="width: 100%"><!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+<div style="width: 100%"><!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+</div>
+
+
+<script type="text/javascript">
+
+  delafut_id = $('#show_delafut').val();
+  showImg('show_id_'+delafut_id);
+  
+  function showImg(id){
+    $('.hydt_li').hide();
+    $("#"+id).show();
+  }
+</script>
+
+
+{/block}
+
+

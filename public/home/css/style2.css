@@ -1,0 +1,214 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0; font-family:"微软雅黑",Arial;}
+li{ list-style:none;}
+
+a{text-decoration:none;}
+.wd{width:1200px; margin:0 auto; overflow:hidden;}
+/*申报项目*/
+.banner{ width:100%; height:300px; background:url(../images/sbxm-banner.jpg) center no-repeat;}
+.gong-box{margin-top:40px;}
+.gong-box img{float:left; margin-bottom:10px;}
+.gong-lie{float:left; width:300px;padding-left:40px;}
+.gong-lie a{font-size:14px;color:#222; line-height:30px; display:inline-block;}
+.f1{color:#fff; background-color:#0d5096;}
+.f2{color:#fff; background-color:#092439;}
+.gong-lie span{
+	width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+	display:inline-block;}
+
+.yid-box{float:left; position:relative; margin:30px 10px;}
+.gb-img{position:absolute;top:0; left:0;width:380px; height:500px;
+opacity:0.6; background-color:#2660a0; color:#fff;text-align:center;
+display:none;}	
+.sbao-tit{border-bottom:1px solid #e7e7e7; margin-top:40px;}
+.sbao-tit h4{width:80px;font-size:20px; color:#0f5092; border-bottom:1px solid #0f5092; padding-bottom:10px;}
+.liuch-tu{width:1180px;margin:0 auto; padding:24px 0;}
+
+/*产业基地*/
+.cd-banner{ width:100%; height:300px; background:url(../images/chand-banner.jpg) center no-repeat;}
+.chandi-box{border-bottom:1px solid #b5bcc3;padding:34px 0;}
+.chandi-box img{ float:left;}
+.cd-content{float:right;width:870px;}
+.cd-content h4{font-size:16px; color:#666; padding-bottom:10px;
+padding-top:5px;}
+.cd-content p{font-size:14px; color:#666; line-height:24px;}
+.yama{float:right;color:#999; font-size:16px; margin:30px 0 160px 0;}
+.yama input{width:36px; height:36px; border:1px solid #c8c8c8; line-height:38px\9; text-align:center;}
+.yama a{float:left; margin:5px; line-height:38px;}
+.yama .huank{width:37px; height:37px; border:1px solid #666;
+-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
+behavior:url(css/ie-css3.htc);}
+.edit{ display: inline-block;margin-left: 15px; margin-top: 10px;}
+.cyjd_box{ width:1200px; margin: 0 auto; overflow: hidden; margin-bottom: 30px;}
+
+/*电商学院*/
+.ds-banner{ width:100%; height:300px; background:url(../images/ds-banner.jpg) center no-repeat;}
+.fenlei{font-size:14px;color:#666;padding:30px 0;}
+.ds-title p{width:112px; border-bottom:2px solid #0f5092; padding-bottom:8px;font-size:24px;color:#222222; font-weight:normal;}
+
+.ds-box{margin:0 auto; overflow:hidden; padding-bottom:20px;}
+.shipin-box{float:left; margin:30px; margin-top:20px; position:relative; width:240px; height:185px; overflow:hidden;}
+.shipin-box img{ width:240px; height:137px;}
+.shipin-content{width:239px;font-family:"宋体";font-size:14px; color:#474747; padding-top:10px;border-right:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8; padding-bottom:10px;}
+.shipin-content dd{line-height:20px; padding-left:10px;}
+
+.jiage{font-size:16px; color:#ed2923; font-weight:bold; padding-top:8px; margin-left:180px;}
+
+.rq{width:280px;height:30px; background-color:#000; opacity:0.5;
+position:absolute;left:0px;top:130px;color:#fff;font-size:14px;
+line-height:30px; text-indent:15px;}
+.rq span{padding-left:156px;}
+.dsxy_box{ width: 1250px; margin: 0 auto; overflow: hidden; margin-bottom: 30px;} 
+
+/*行业资讯*/
+.hx{ border-bottom:10px solid #0f5092; margin-bottom:20px; width:100%;}
+.more{ float:right; margin-top:-30px;}
+.new-box{ margin-top:20px;}
+.new-box-left{width:860px; overflow:hidden;float:left;}
+.banner-bk{width:4300px;overflow:hidden;}
+.new-banner{float:left;}
+.hangye-img a{float:left;}
+.bor{ border:2px solid #fff;}
+.new-lie{float:right;width:310px; margin-left:30px;
+-o-text-overflow: ellipsis;/* for Opera */
+text-overflow: ellipsis;/* for IE */}
+.tit{ width:100%;}
+.tit h4{font-size:16px;color:#fff; width:80px; height:30px; background-color:#0d5096; text-align:center; line-height:30px;
+margin-bottom:10px;}
+.new-lie a{font-size:14px;color:#222; line-height:36px; display:inline-block; width: 310px; text-align: left; }
+.f1{color:#fff; background-color:#0d5096;}
+.f2{color:#fff; background-color:#092439;}
+.new-lie span{width: 20px;height: 20px;text-align: center;line-height: 20px;display:inline-block; margin-right: 6px;}
+.xia{ margin-bottom:20px;}
+.hy-dongt-bottom{ padding-bottom:20px;}
+.hy-wenzi a{font-size:14px;color:#666; float:left; padding:20px 5px;}
+.hy-dongt{font-size:16px; margin-top:20px;}
+.hy-dongt img{ float:left;}
+.ziuxn-content{ float:right;width:908px;}
+.ziuxn-content h4{color:#333333; padding-top:5px;}
+.ziuxn-content time{color:#666;line-height:40px;}
+.ziuxn-content p{color:#666; line-height:24px;}
+
+.hy-tw{ padding:10px 0 30px 0;}
+.hy-tw a{ float:left; margin:10px;}
+
+/*第三方服务平台*/
+.fuwu-box{ margin-bottom: 30px;}
+.fuwu-box-left{ float:left;width:274px; border:1px solid #dddddd; padding-bottom:20px;}
+.fuwu-tit{width:250px; margin-left:10px; padding-top:20px; 
+border-bottom:1px solid #ddd;padding-bottom:10px;}
+.fuwu-tit h4{font-size:20px;color:#000; font-weight:normal;
+padding-bottom:8px;}
+.fuwu-tit dd{font-size:14px;color:#666;}
+.fuwu-tit .yid01{ padding-left:10px;}
+
+.fuwu-box-right{ float:right; width:870px;}
+.input-box{float:left; position:relative; margin-top:20px;}
+.input-box h4{ float:left;font-size:20px;color:#0b7fc6; font-weight:normal;
+padding-left:10px;}
+.input-box p{float:left;font-size:20px;color:#000; padding-left:280px;}
+.input-box input{width:285px;float:left; border:1px solid #ddd; height:26px; margin-left:14px; outline:none; line-height:26px\9;color:#a9a9a9; text-indent:8px;}
+.input-box .dw{ position:absolute; top:3px; right:100px;}
+.input-box img{float:left; margin-left:4px;}
+
+.fuwu-xian{ float:left;width:885px;border-bottom:2px solid #0d6fb8;
+margin:10px 0;}
+
+
+
+.fws-box{width:880px; overflow:hidden; float:left;}
+.fws-img{float:left;width:206px; border:1px solid #ddd;padding-bottom:12px; margin:10px 5px;}
+.myi{width:192px; overflow:hidden; margin:0 auto;font-size:12px;}
+.myi dd{ float:left;color:#000; line-height:40px;font-weight:600;}
+.myi span{ float:right;color:#fff;background-color:#ff2175;text-align:center;padding:2px 3px; margin-top:10px;}
+.fws-img p{font-size:12px;color:#666; line-height:24px; padding-left:5px;}
+
+
+.hydt {
+    width: 860px;
+    
+    overflow: hidden;
+}
+.hydt_li {
+    height: 400px;
+    overflow: hidden;
+    width: 100%;
+}
+#hydt_img1{ padding-left: 0px;}
+#hydt_img5{padding-right: 0px; padding-left: 7px !important;}
+#hydt_img4{padding-left: 7px !important;}
+.slidebar div{
+	float: left;
+	background: none;
+	margin-right: 0;
+	padding: 2px 5px;
+	text-align: center;
+	list-style: none;
+	width: 163px !important;
+	height: 70px !important;	
+}
+.slidebar div:hover img{
+	border: 3px solid #66ccff;	
+	width: 157px !important;
+	height: 64px !important;
+}
+.hydt_ul .on{  border: 1px solid #66ccff;}
+
+.news_box{ width: 1200px; margin: 0 auto; overflow: hidden; margin-bottom: 30px;}
+.slide_left {
+    position: absolute;
+    top: 150px;
+    z-index: 100;
+}
+.slide_right {
+    position: absolute;
+    top: 150px;
+    z-index: 100;
+    right: 0px;
+}
+
+/*页脚*/
+.footer{width:100%; margin:0 auto; background-color:#102741; margin-top:20px;}
+.footer-box{width:1170px; margin:0 auto; overflow:hidden; padding:50px 0;}
+.bottom-logo{ float:left; margin-top:10px;}
+.bottom-nav{ width:620px; float:left;overflow:hidden; margin-left:40px;}
+.nav-box{float:left; margin:0 34px;}
+.nav-box li{ line-height:28px;}
+.nav-box img{ margin-top:8px;}
+.nav-box .xiug{ padding-bottom:10px;}
+.nav-box .xiug>a{ font-size:16px; color:#fff;}
+.nav-box li>a{ font-size:12px; color:#fff;}
+.yidong{ padding-left:20px;}
+
+.guanzhu{ float:left;width:200px;margin-left:30px;}
+.guanzhu a{margin:5px; float:left;}
+
+.erweima{float:right; text-align:center; font-size:16px; color:#fff;
+margin-top:5px;}
+.erweima dd{ line-height:30px;}
+.footer-bottom{width:100%; background-color:#091c30; margin:0 auto; }
+.copy{width:790px; margin:0 auto; overflow:hidden;}
+.copy p{font-size:12px; color:#b6b3b3; float:left;line-height:60px;}
+.copy img{ float:left; margin:20px 10px;}
+
+/**分页样式**/
+.pagination li { float: left; }
+.pagination .active { padding: 5px 10px;
+    border: 1px solid #0A82F2;
+    background: #0A82F2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px; } 
+.pagination .disabled { padding: 5px 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #A4A4A4;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-right: 5px;
+    } 
+

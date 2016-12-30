@@ -8,14 +8,14 @@ class Adver extends Admin
 {
 
 	public function index(){
-		$db = new AdverModel;
+	$db = new AdverModel;
 
-		$list = $db->getAll();
+	$list = $db->getAll();
 
-		$page = $list->render();
-		$this->assign('page',$page);
-		$this->assign('list' , $list);
-		return $this->fetch();
+	$page = $list->render();
+	$this->assign('page',$page);
+	$this->assign('list' , $list);
+	return $this->fetch();
 	}
 
 	public function add(){
@@ -48,7 +48,7 @@ class Adver extends Admin
 
 		$file = request()->file('files');
 		$path = 'public/assets/img/adver/';
-		$info = $file->validate(['size'=>112400,'ext'=>'jpg,png,gif,ico'])->move(ROOT_PATH . $path);
+		$info = $file->validate(['size'=>612400,'ext'=>'jpg,png,gif,ico'])->move(ROOT_PATH . $path);
 		if($info){
 			$img_path = $info->getSaveName();
 		}else{

@@ -991,6 +991,7 @@ class Query
     public function paginate($listRows = null, $simple = false, $config = [])
     {
         $config   = array_merge(Config::get('paginate'), $config);
+
         $listRows = $listRows ?: $config['list_rows'];
 
         /** @var Paginator $class */

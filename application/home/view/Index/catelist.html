@@ -1,0 +1,86 @@
+{extend name='base' /}
+
+{block name='main'}
+
+<div id="wp" class="wp">
+    
+    
+<!--[name]!portalcategory_listtplname![/name]--><div id="pt" class="bm cl">
+<div class="z">
+<a href="{:url('index/index')}" class="nvhm" title="首页"></a> <em>›</em>
+<a href="{:url('index/index')}">首页</a> <em>›</em>{$show.cate_name}</div>
+</div><style id="diy_style" type="text/css"></style>
+<div class="wp">
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="ct2 wp cl">
+<div class="mn"><!--[diy=listcontenttop]--><div id="listcontenttop" class="area"></div><!--[/diy]-->
+<div class="bm">
+<div class="bm_h cl">
+<h1 class="xs2">{$show.cate_name}</h1>
+</div>
+<div class="bm_c xld">
+
+{empty name='lists'}
+没有数据
+{else /}
+{volist name="lists" id="list"}
+<dl class="bbda cl">
+<dt class="xs2"><a href="{:url('index/portal_show')}?id={$list.id}" target="_blank" class="xi2" style="">{$list.title}</a> </dt>
+<dd class="xs2 cl">
+{$list.e_title}</dd>
+<dd>
+<span class="xg1"> {:date('Y-m-d h:m:s',$list.addtime)}</span>
+</dd>
+</dl>
+{/volist}
+{/empty}
+
+</dd>
+</dl>
+</div>
+<!--[diy=listloopbottom]-->
+<div id="listloopbottom" class="area"></div><!--[/diy]-->
+</div>
+
+<div class="pgs cl">
+	<div class="pg">
+	{$lists->render()}
+	</div>
+</div>
+
+<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+
+</div>
+<div class="sd pph">
+<div class="drag">
+<!--[diy=diyrighttop]--><div id="diyrighttop" class="area"></div><!--[/diy]-->
+</div>
+
+<div class="bm">
+<div class="bm_h cl">
+<h2>相关分类</h2>
+</div>
+<div class="bm_c">
+<ul class="xl xl2 cl">
+{volist name="catelist" id="list"}
+<li><a href="{:url('index/catelist')}?id={$list.id}">{$list.cate_name}</a></li>
+{/volist}
+</ul>
+</div>
+</div>
+
+<div class="drag">
+<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+</div>
+
+</div>
+</div>
+
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>	</div>
+
+
+{/block}

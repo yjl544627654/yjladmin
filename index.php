@@ -17,5 +17,6 @@ define('APP_PATH', __DIR__ . '/application/');
 //定义常量
 define('PATH', '/');
 define("PUBLIC_PATH", PATH.'public/');
+define('LOAD',PATH.'public/');
 // 加载框架引导文件
 require __DIR__ . '/thinkphp/start.php';

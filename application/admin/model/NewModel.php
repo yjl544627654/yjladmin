@@ -26,8 +26,8 @@ class NewModel extends Model
 	];
 
 	
-	public function getNew($num = 20){
-		$list =  $this->paginate($num);
+	public function getNew($where='',$num = 20){
+		$list =  $this->where($where)->field('id,sort,title,auth,addtime,cate_id')->paginate($num);
 		return $list;
 	}
 
@@ -45,6 +45,17 @@ class NewModel extends Model
 
 	public function delNew($where){
 		return $this->where($where)->delete();
+	}
+
+
+	//下面是提供给前端的方法
+	public function getIndexListNew($where='',$order='',$limit=''){
+
+		$order = $order ? $order : 'addtime desc' ; 
+		$limit = $limit ? $limit : 5;
+
+		$list = $this->where($where)->order($order)->limit($limit)->select();
+		return $list;
 	}
 
 
