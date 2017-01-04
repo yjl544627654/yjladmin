@@ -20,7 +20,7 @@ return [
     // 应用命名空间
     'app_namespace'          => 'app',
     // 应用调试模式
-    'app_debug'              => true,
+    'app_debug'              => false,
     // 应用Trace
     'app_trace'              => false,
     // 应用模式状态
@@ -61,7 +61,7 @@ return [
     // +----------------------------------------------------------------------
 
     // 默认模块名
-    'default_module'         => 'admin',
+    'default_module'         => 'home',
     // 禁止访问模块
     'deny_module_list'       => ['common'],
     // 默认控制器名
@@ -145,6 +145,7 @@ return [
 
     // 异常页面的模板文件
     'exception_tmpl'         => THINK_PATH . 'tpl' . DS . 'think_exception.tpl',
+    //'exception_tmpl'         => APP_PATH . 'admin'.DS.'view'.DS.'Commom'.DS.'404.html',
 
     // 错误显示信息,非调试模式有效
     'error_message'          => '页面错误！请稍后再试～',
@@ -184,7 +185,7 @@ return [
         // 缓存保存目录
         'path'   => CACHE_PATH,
         // 缓存前缀
-        'prefix' => '',
+        'prefix' => 'yjl_',
         // 缓存有效期 0表示永久缓存
         'expire' => 0,
     ],
@@ -231,5 +232,28 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+    //默认错误跳转对应的模板文件
+    'dispatch_error_tmpl' => APP_PATH . '/admin/view/Common/error.html',
+    //默认成功跳转对应的模板文件
+    'dispatch_success_tmpl' => APP_PATH . '/admin/view/Common/success.html',
+
+    //验证码
+    'captcha'  => [
+        // 验证码字符集合
+        'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY', 
+        // 验证码字体大小(px)
+        'fontSize' => 35, 
+        // 是否画混淆曲线
+        'useCurve' => true, 
+         // 验证码图片高度
+        'imageH'   => 80,
+        // 验证码图片宽度
+        'imageW'   => 300, 
+        // 验证码位数
+        'length'   => 4, 
+        // 验证成功后是否重置        
+        'reset'    => true
+],
 
 ];

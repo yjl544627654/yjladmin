@@ -40,7 +40,7 @@
                                         {volist name='list' id='cate' }
                                             <tr class="gradeX">
                                                 <td>{$cate.id}</td>
-                                                <td>{$cate.cate_name}</td>
+                                                <td><a href="{:url('news/index')}?cate={$cate.id}">{$cate.cate_name}</a></td>
                                                 <td>{$cate.sort}</td>
                                                 <td>{$cate.addtime|date="Y-m-d",###}</td>
                                                 <td>

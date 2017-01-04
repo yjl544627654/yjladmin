@@ -76,9 +76,22 @@ GMT+8, 2016-12-26 15:16<span id="debuginfo">
 </footer>
 
 
-<div id="scrolltop" style="left: auto; right: 0px; visibility: hidden;">
+<script src="{$Think.LOAD}home/img/home.php" type="text/javascript"></script>
+
+<div id="scrolltop" style="left: auto; right: 0px; visibility: visible;">
 <span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo(&#39;0&#39;,&#39;0&#39;)" class="scrolltopa"><b>返回顶部</b></a></span>
 </div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+<script type="text/javascript">jQuery('.isblock').smoove();jQuery("#yunshan_tabs li").each(function(a){
+jQuery(this).click(function(){
+jQuery(this).addClass("on").siblings().removeClass("on");
+jQuery("#yuanshan_tabsbd .neirong").eq(a).addClass("on").siblings().removeClass("on");
+})
+})</script>     <div id="discuz_tips" style="display:none;"></div>
+      <script type="text/javascript">
+        var tipsinfo = '|X3.2|0.6||0||0|7|1483080591||2';
+</script>
+<script src="http://discuz.gtimg.cn/cloud/scripts/discuz_tips.js?v=1" type="text/javascript" charset="UTF-8"></script>
 
 
 {load href="/public/home/js/discuz_tips.js?v=1" /}

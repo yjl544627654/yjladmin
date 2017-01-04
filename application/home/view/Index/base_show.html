@@ -1,0 +1,96 @@
+{extend name='base' /}
+
+{block name='main'}
+
+<style type="text/css">
+	.ct2 .mn{
+		width: 100%;
+	}
+</style>
+
+<div class="wp">
+
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="index">首页</a> <em>›</em>
+<a href="{:url('index/base')}">产业基地</a><em>›</em>
+查看内容
+</div>
+</div>
+
+<div id="ct" class="ct2 wp cl">
+<div class="mn">
+<div class="bm vw">
+<div class="h hm">
+<h1 class="ph">{$base.name} </h1>
+<p class="xg1">
+{:date('Y-m-d H:m:s',$base.addtime)}
+</p>
+</div>
+
+<!--[diy=diysummarytop]--><div id="diysummarytop" class="area"></div><!--[/diy]-->
+
+<!--[diy=diysummarybottom]--><div id="diysummarybottom" class="area"></div><!--[/diy]-->
+
+<div class="d">
+
+<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
+<div align="cenTer">
+<p>{$base.content}</p>
+<p><img src="{$Think.LOAD}assets/img/product/{$base.img}"></p>
+</div>
+
+<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+
+<script src="static/js/home.js?Z3u" type="text/javascript"></script>
+<div id="click_div"><table cellpadding="0" cellspacing="0" class="atd">
+<tbody><tr></tr>
+</tbody></table>
+<script type="text/javascript">
+function errorhandle_clickhandle(message, values) {
+if(values['id']) {
+showCreditPrompt();
+show_click(values['idtype'], values['id'], values['clickid']);
+}
+}
+</script>
+
+</div>
+
+
+<!--[diy=diycontentclickbottom]--><div id="diycontentclickbottom" class="area"></div><!--[/diy]-->
+
+</div>
+
+
+</div>
+
+<!--[diy=diycontentrelatetop]--><div id="diycontentrelatetop" class="area"></div><!--[/diy]-->
+<!--[diy=diycontentrelate]--><div id="diycontentrelate" class="area"></div><!--[/diy]-->
+
+
+<!--[diy=diycontentcomment]--><div id="diycontentcomment" class="area"></div><!--[/diy]-->
+
+
+</div>
+<div class="sd pph">
+
+
+<div class="drag">
+<!--[diy=diyrighttop]--><div id="diyrighttop" class="area"></div><!--[/diy]-->
+</div>
+
+
+<div class="drag">
+<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+</div>
+
+
+</div>
+</div>
+
+
+</div>
+
+
+{/block}

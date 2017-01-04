@@ -280,6 +280,8 @@
         pre.prettyprint .atv { color: #080 }  /* a markup attribute value */
         pre.prettyprint .dec, pre.prettyprint .var { color: #606 }  /* a declaration; a variable name */
         pre.prettyprint .fun { color: red }  /* a function name */
+
+        .row-content{ padding: 0px 20% !important;  }
     </style>
 </head>
 <body>
@@ -332,11 +334,11 @@
         </div>
     </div>
     <?php } else { ?>
-    <div class="exception">
+    <!-- <div class="exception">
         
             <div class="info"><h1><?php echo htmlentities($message); ?></h1></div>
         
-    </div>
+    </div> -->
     <?php } ?>
     
     <?php if(!empty($datas)){ ?>
@@ -409,11 +411,33 @@
     </div>
     <?php } ?>
 
-    <div class="copyright">
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/amazeui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/app.css" />
+
+        <div class="row-content am-cf">
+            <div class="widget am-cf">
+                <div class="widget-body">
+                    <div class="tpl-page-state">
+                        <div class="tpl-page-state-title am-text-center tpl-error-title">
+                            <?php echo htmlentities($message); ?></div>
+                        <div class="tpl-error-title-info">Page Not Found</div>
+                        <div class="tpl-page-state-content tpl-error-content">
+
+                            <p>对不起,没有找到您所需要的页面,可能是URL不确定,或者页面已被移除。</p>
+                            <a href="index"><button type="button" class="am-btn am-btn-secondary am-radius tpl-error-btn">返回首页</button></a></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   <!--  <div class="copyright">
         <a title="官方网站" href="http://www.thinkphp.cn">ThinkPHP</a> 
         <span>V<?php echo THINK_VERSION; ?></span> 
         <span>{ 十年磨一剑-为API开发设计的高性能框架 }</span>
-    </div>
+    </div> -->
+
     <?php if(\think\App::$debug) { ?>
     <script>
         var LINE = <?php echo $line; ?>;

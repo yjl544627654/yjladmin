@@ -91,6 +91,8 @@ class Setting extends Admin
 
 			if($type == 'link'){
 				$data['route'] = $this->validata('link','请输入链接或者路由');
+			}else{
+				$data['content'] = $this->validata('editorValue','请输入单页面的内容');
 			}
 			if( $nva_db->getVlaueNav(['id'=>$nav_id],'nav_id') > 0 ){
 				$this->error('不好意思，目前只支持二级导航');
@@ -104,7 +106,7 @@ class Setting extends Admin
 			$data['ctime'] = time();
 
 			$nav_id = $nva_db->addNav($data);
-			if( $type == 'page' ){
+			/*if( $type == 'page' ){
 				//单页面
 				$page_id = DB::name('nav_page')->insertGetId([
 						'nav_id' => $nav_id,
@@ -114,7 +116,7 @@ class Setting extends Admin
 				$where['id'] =  $nav_id;
 				$pagedate['page_id'] = $page_id ;
 				$this->res( $nva_db->updateNav($where,$pagedate) );
-			}
+			}*/
 
 			$this->success('添加导航成功！','setting/nav');
 		}else{
@@ -150,11 +152,6 @@ class Setting extends Admin
 		$where['id'] = $id;
 		$show = $nva_db->getOneNav($where)->toArray();
 
-		if( !empty($show['page_id']) ){
-			$show['content'] = DB::name('nav_page')->where('nav_id',$id)->value('content');
-			$ishasPage = 1;
-		}
-
 		if(request()->isPost()){
 
 			$type = input('post.type') ;
@@ -173,28 +170,12 @@ class Setting extends Admin
 			$data['sort'] = input('sort');
 			$data['type'] = $type;
 			$data['ctime'] = time();
-			$data['route'] = $this->validata('link','请输入导航链接');
 
 			$nav_id = $nva_db->updateNav(['id'=>$id],$data);
 			if( $type == 'page' ){
 				//单页面
-				if(  !isset($ishasPage) ){
-
-					$map['id'] = DB::name('nav_page')->insertGetId([
-						'nav_id' => $id,
-						'content' => input('post.editorValue'),
-						'addtime' => time()
-					]);
-
-					$pagedate['page_id'] = $map['id'] ;
-					$this->res( $nva_db->updateNav($map,$pagedate) );
-
-				}else{
-					$map['id'] = DB::name('nav_page')->where(['nav_id'=>$id])->update([
-						'content' => input('post.editorValue'),
-					]);
-				}
-				
+				$map['content']  = $_POST['editorValue'];
+				$res = $nva_db->where('id',$id)->update($map);
 			}
 			$this->success('修改导航成功！');
 

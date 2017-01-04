@@ -1,0 +1,154 @@
+{extend name='base' /}
+
+{block name='main'}
+
+<style type="text/css">
+	
+	#right{
+		margin-left:200px;
+	}
+
+	#p {
+    border-bottom: 1px solid #e5e5e5;
+    height: 30px;
+    margin-top: 50px;
+    color: #323232;
+    font-size: 16px;
+    font-family: '微软雅黑';
+    padding-left: 20px;
+
+   }
+
+   #right_c {
+    padding: 20px 0 40px 40px;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    min-height: 400px;
+	}
+
+
+	table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+	tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+	.wbytable td {
+    padding: 8px;
+}
+
+.wbytable .wbytext {
+    outline: none;
+    padding: 5px;
+    height: 22px;
+    width: 320px;
+    border: 1px solid #e3e3e3;
+}
+input, select {
+    color: #555555;
+    font-size: 12px;
+}
+
+.wbytable .wbyarea {
+    padding: 5px;
+    outline: none;
+    width: 450px;
+    border: 1px solid #e3e3e3;
+    height: 125px;
+}
+.wbytable .wbytextyz {
+    outline: none;
+    padding: 5px;
+    height: 22px;
+    width: 100px;
+    border: 1px solid #e3e3e3;
+    float: left;
+}
+
+.wbytable .wyzm {
+    padding-top: 6px;
+    display: block;
+    width: 48px;
+    height: 22px;
+    float: left;
+    padding-left: 8px;
+}
+
+.wbytable .msgbut {
+    width: 90px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    color: #555;
+}
+</style>
+
+
+<div class="wp">
+
+<div id="pt" class="bm cl" style="margin:10px 0px;">
+        <div class="z">
+        <a href="index" class="nvhm" title="首页"></a> <em>›</em>
+        <a href="index">首页</a> <em>›</em> 
+        <a href="">留言中心</a>
+        </div>
+</div>
+
+<div class="article fr" style="min-height:550px;">
+
+
+<div id="right">
+<div id="p">在线留言</div>
+<div id="right_c"><div style="line-height:28px;">
+<div class="xwnymmain">
+<form action="" method="post">
+<table border="0" width="600" class="wbytable">
+<tbody>
+	<tr>
+		<td>联系人</td>
+		<td><input type="text" name="username" value="" class="wbytext"><font color="red">*</font></td>
+		</tr>
+	<tr>
+		<td>联系电话</td>
+		<td><input type="text" name="tel" value="" class="wbytext" maxlength="11"><font color="red">*</font></td>
+	</tr>
+	<tr>
+		<td>电子邮箱</td>
+		<td><input type="text" name="email" value="" class="wbytext"><font color="red">*</font></td>
+	</tr>
+	<tr>
+		<td>留言内容</td><td><textarea name="content" class="wbyarea"></textarea></td>
+	</tr>
+	<tr>
+		<td>验证码</td>
+		<td>
+			<input name="sys_check" id="verify" type="text" maxlength="4" class="wbytextyz">
+            <span class="wyzm">
+                <div>{:captcha_img()}</div></span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="hidden" name="do" value="yes"></td><td><input type="submit" value="提 交" class="msgbut">
+		</td>
+	</tr>
+</tbody>
+</table>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+
+{/block}

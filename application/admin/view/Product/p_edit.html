@@ -42,7 +42,11 @@
                                         <div class="am-u-sm-9">
                                         <select data-am-selected  name='uid'>
                                             {volist name="index" id='indexlist'}
-                                                <option value="{$indexlist.id}">{$indexlist.name}</option>
+                                                <option value="{$indexlist.id}"
+                                                {eq name='$indexlist.id' value="$show.p_id" }
+                                                    selected="" 
+                                                {/eq}
+                                                >{$indexlist.name}</option>
                                             {/volist}
                                         </select>
                                         </div>

@@ -38,6 +38,7 @@ class News extends Admin
 			$data['title'] = $this->validata('title','请填写标题');
 			$data['e_title'] = $this->validata('e_title','请填写摘要');
 			$data['cate_id'] = $this->validata('uid','请选择分类');
+			$data['img'] = input('post.img');
 			$data['content'] = $this->validata('editorValue','填写内容');
 			$data['addtime'] = time();
 			$data['auth'] = input('post.auth') ? input('post.auth') : Session::get('user') ;
@@ -52,6 +53,30 @@ class News extends Admin
 		
 	}
 
+	public function ajax_uploadimg(){
+		$db = new NewModel;
+
+		$file = request()->file('files');
+		$path = 'public/assets/img/new/';
+		$info = $file->validate(['size'=>612400,'ext'=>'jpg,png,gif,ico'])->move(ROOT_PATH . $path);
+		if($info){
+			$img_path = $info->getSaveName();
+		}else{
+			//上传失败 返回失败信息
+			$msg = $file->getError();
+		}
+
+		if( !isset($msg) ){
+			$res['status'] = 1;
+			$res['img_path'] = $img_path;
+			return $res;
+		}else{
+			$res['status'] = 0;
+			$res['msg'] = $msg;
+			return $res;
+		}
+	}
+
 	public function edit(){
 
 		$id = input('?get.id') ? input('get.id') : $this->error('参数错误');
@@ -63,6 +88,7 @@ class News extends Admin
 			$data['e_title'] = $this->validata('e_title','请填写摘要');
 			$data['cate_id'] = $this->validata('uid','请选择分类');
 			$data['content'] = $this->validata('editorValue','填写内容');
+			$data['img'] = input('post.img');
 			$data['updatetime'] = time();
 			$data['auth'] = input('post.auth') ? input('post.auth') : Session::get('user') ;
 			$data['sort'] = input('post.sort') ? input('post.sort') : 0;

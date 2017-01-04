@@ -1,0 +1,241 @@
+{extend name='base' /}
+
+{block name='main'}
+
+<style>
+.menu {
+    width: 200px;
+    font-family: "Microsoft Yahei", "\5b8b\4f53";}
+.fl {
+    float: left;
+    display: inline;}
+.menu-tit {
+    height: 40px;
+    line-height: 40px;
+    background: #0a82f2;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;}
+.menu-list {
+    min-height: 40px;
+    background: #fff;
+    border: 1px solid #eee;}
+
+.menu-list li {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #333;
+    background: #ECECEC;
+    border-bottom: 1px dashed #ACA8A8;
+}
+.menu-list li:hover{background:#fff;}
+.menu-list li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #666;
+}
+.menu-list li a:hover {
+    text-decoration: none;
+    color: #0a82f2;}
+.menu-list li a.active {
+    text-decoration: none;
+    color: #0a82f2;}
+
+
+.pagination {
+overflow: hidden;
+    height: 22px;
+    font-family: Tahoma;
+    font-size: 12px;
+}
+.pagination a,.page-info,.page-prev,.page-cur,.page-start,.page-end,.page-break,.page-skip {
+    float: left;
+    height: 18px;
+    margin: 0 3px 0 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: 18px;
+}
+
+.page-start,.pagination a,.page-end {
+    padding: 0 5px;
+    border: solid 1px #ccc;
+}
+
+.page-start {
+    width: 20px;
+    padding: 0 !important;
+    background-position: 7px -175px;
+}
+
+a.page-prev {
+    width: 20px;
+    padding: 0 !important;
+    background-position: -68px -175px !important;
+}
+
+.page-cur,.page-break {
+    padding: 0 3px;
+}
+
+a.page-next {
+    padding-right: 16px;
+    background-position: -179px -175px !important;
+}
+
+.page-end {
+    padding-right: 16px;
+    background-position: -104px -175px;
+}
+
+.page-cur {
+    border-color: #fff;
+    color: #ff6400;
+    font-weight: 700;
+}
+
+.page-skip {
+    padding: 0 3px;
+}
+
+.page-skip input {
+    width: 30px;
+    height: 18px;
+    margin: 0 3px;
+    border: solid 1px #ccc;
+    vertical-align: top;
+    vertical-align: middle;
+}
+
+.page-skip button {
+    width: 37px;
+    height: 19px;
+    margin: 0 0 0 2px;
+    border: 0 none;
+    background-position: -260px -123px;
+    text-indent: -999px;
+}
+
+.page-prev span,.page-start span,.page-mini .page-next span,.page-mini .page-end span,.page-skip button span {
+    display: none !important;
+}
+
+.page-top,.page-bottom {
+    float: center;
+}
+.article {
+    width: 920px;
+    font-family: "Microsoft Yahei", "\5b8b\4f53";
+}
+.fr {
+    float: right;
+    display: inline;
+}
+.headline {
+    position: relative;
+    height: 29px;
+    line-height: 29px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    font-family: "Microsoft Yahei", "\5b8b\4f53";}
+.headline span {
+    display: inline-block;
+    height: 27px;
+    line-height: 27px;
+    *height: 28px;
+    *line-height: 28px;
+    padding: 0 20px;
+    text-align: center;
+    border-bottom: 2px solid #0a82f2;
+}
+.fw-lists {
+    padding: 10px 5px;
+}
+.fw-list {
+    overflow: hidden;
+    padding: 20px 0px;
+    border-bottom: 1px dashed #eee;
+}
+.fw-list .fw-img {
+    float: left;
+    display: block;
+    width: 200px;
+    height: 140px;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+.fw-list .inner {
+    float: left;
+    width: 600px;
+    margin-left: 20px;
+}
+.fw-list .inner .title {
+    color: #424447;
+    font-weight: 700;
+    font-size: 16px;
+}
+.fw-list .inner .des-list {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.fw-list .inner .time {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.fw-list .inner .des-list li {
+    display: block;
+    margin-right: 2%;
+    line-height: 24px;
+    margin-bottom: 5px;
+}
+
+</style>
+
+
+<div class="wp">
+<div id="pt" class="bm cl" style="margin:10px 0px;">
+        <div class="z">
+        <a href="index" class="nvhm" title="首页"></a> <em>›</em>
+        <a href="index">首页</a> <em>›</em> 
+        <a href="">人才招聘</a>
+        </div>
+</div>
+    <div class="article fr" style="min-height:550px;">
+        <p class="headline"><span>人才招聘</span></p>
+        <ul class="fw-lists" id="showitjob">
+        <!--人才服务开始-->
+        	{volist name="joblist" id="list"}
+            <li class="fw-list">
+	            <a style="height:150px;" class="fw-img" href="{:url('index/portal_show')}?id={$list.id}">
+	            	<img src="{$Think.LOAD}assets/img/new/{$list.img}" height="150" width="200"></a>
+	            <div class="inner">
+	            <a class="title" href="{:url('index/portal_show')}?id={$list.id}">{$list.title}</a>
+	                <p>{$list.e_title}</p>
+	                <div class="time">发布时间：{:date('Y-m-d H:m:s',$list.addtime)}</div>
+	            </div>			
+            </li>
+            {/volist}
+                                       
+                        <!--人才服务结束-->
+        </ul>
+        <div style="float: right;"></div>
+        <div style="text-align: right;"></div>
+    </div>
+    <!--列表分页导航_动态开始-->
+    <div class="pgs cl" style="clear:both;"></div>
+    <!--列表分页导航_动态结束-->
+</div>
+
+
+{/block}

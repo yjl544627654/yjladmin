@@ -1,0 +1,87 @@
+{extend name='base' /}
+
+{block name='main'}
+
+<style type="text/css">
+#filters {
+    margin: 1%;
+    padding: 0;
+    list-style: none;
+}
+#filters li {
+    float: left;
+}
+#filters li span {display: block; padding: 5px 20px; text-decoration: none; color: #666; cursor: pointer;}
+#filters li span.active {
+    background: #e95a44;
+    color: #fff;
+}
+.cl:before{
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+</style>
+
+
+<div class="cyjd_box">
+    <ul id="filters" class="cl">
+       <li><a href="javasrcipt:;" onclick="all_show()">
+    		<span class="filter active">全部</span></a></li>
+       <li><a href="javasrcipt:;"><span class="filter" onclick="show_base('changye')">创客空间</span></a></li>
+       <li><a href="javasrcipt:;"><span class="filter " onclick="show_base('yuanqu')">产业园区</span></a></li>
+    </ul>
+
+  
+      {volist name="base.changye" id="list"}
+	  <div class="chandi-box wd changye" id="" >
+		 <a href="base_show?id={$list.id}"  >
+		 	<img src="{$Think.LOAD}assets/img/product/{$list.img}" alt="" width="300px" height="200">
+		 </a>  
+		 <div class="cd-content">
+		    <h4><a href="{url:('index/base_show')}?id={$list.id}" target="_blank"></a>{$list.name}</h4>
+		    <p>{$list.content}</p>
+		  </div>
+		  <div class="edit">
+		  </div>
+		</div>
+		{/volist}
+
+
+		{volist name="base.yuanqu" id="list"}
+	  <div class="chandi-box wd yuanqu" id="">
+		 <a href="base_show?id={$list.id}"  >
+		 	<img src="{$Think.LOAD}assets/img/product/{$list.img}" alt="" width="300px" height="200">
+		 </a>  
+		 <div class="cd-content">
+		    <h4><a href="{url:('index/base_show')}?id={$list.id}" target="_blank"></a>{$list.name}</h4>
+		    <p>{$list.content}</p>
+		  </div>
+		  <div class="edit">
+		  </div>
+		</div>
+		{/volist}
+
+
+<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+</div>
+<script type="text/javascript">
+	    $('#filters li span').click(function (){
+	        $('#filters  li span').attr('class','filter');
+	        $(this).addClass('active');
+	    })
+
+	    function show_base(id){
+	    	$('.cyjd_box .wd').hide();
+	    	$('.'+id).show();
+	    }
+
+	    function all_show(){
+	    	$('.cyjd_box .wd').show();
+	    }
+	</script>
+
+{/block}

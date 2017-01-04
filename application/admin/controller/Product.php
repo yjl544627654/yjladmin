@@ -25,13 +25,8 @@ class Product extends Admin
 
 		if( request()->isPost() ){
 
-			if( input('post.is_index') == 1 ){
-				$data['is_index'] = 1;
-				$data['p_id'] = 0;
-			}else{
-				$data['is_index'] = 0;
-				$data['p_id'] = $this->validata('uid','请选择相册分类');
-			}
+			$data['is_index'] = 1;
+			$data['p_id'] = 0;
 			$data['name'] = $this->validata('name','请填写相册名');
 			$data['img'] = $this->validata('img','请添加图片');
 			$data['sort'] = input('?post.sort') ? input('post.sort') :0 ;
@@ -58,13 +53,9 @@ class Product extends Admin
 
 		if( request()->isPost() ){
 
-			if( input('type') == 1 ){
-				$data['is_index'] = 1;
-				$data['p_id'] = 0;
-			}else{
-				$data['is_index'] = 0;
-				$data['p_id'] = $this->validata('uid','请选择相册分类');
-			}
+			$data['is_index'] = 1;
+			$data['p_id'] = 0;
+			
 			$data['name'] = $this->validata('name','请填写相册名');
 			$data['img'] = $this->validata('img','请添加图片');
 			$data['sort'] = input('?post.sort') ? input('post.sort') :0 ;
@@ -98,7 +89,7 @@ class Product extends Admin
 
 		$file = request()->file('files');
 		$path = '/public/assets/img/product/';
-		$info = $file->validate(['size'=>102400,'ext'=>'jpg,png,gif,ico'])->move(ROOT_PATH . $path);
+		$info = $file->validate(['size'=>802400,'ext'=>'jpg,png,gif,ico'])->move(ROOT_PATH . $path);
 		if($info){
 			$img_path = $info->getSaveName();
 		}else{
