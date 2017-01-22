@@ -8,15 +8,19 @@ use \app\admin\model\UserGroupModel;
 
 class User extends Admin
 {
+	public $defalutPower = 'index/index,login/notpower,login/out,login/cacheClear,login/login,';
 	
 	function index(){
-		
+
+		if( request()->isGet() ){
+			$where['username'] = ['like','%'.input('get.name').'%'];
+		}
 		$user_db = new UserModel;
 
-		$list = $user_db->getList();
+		$list = $user_db->getList($where);
 		
 		$page = $list->render();
-		
+
 		$this->assign('page',$page);
 		$this->assign('list',$list);
 		return $this->fetch();
@@ -27,36 +31,43 @@ class User extends Admin
 		if( request()->isPost() ){
 			$user_db = new UserModel;
 			$user = input('post.username');
-			
+			$arr = input('post.') ;
+
 			if (empty($user)) {
-				$this->error('请输入用户名');
+				$this->errorflash('新建失败！请输入用户名');
+			}elseif( $user_db->CheckUserName($user) ){
+				$this->errorflash('用户名已被使用');
 			}else{
-				$user_db->CheckUserName($user) ? $this->error('用户名已被使用'):'';
+				$pwd = input('post.pwd') ? input('post.pwd') :$this->errorflash('请输入密码');
+
+				if( !$this->getflash('error') ){  // 如果没有error的消息才提交操作
+					$data['img'] = input('post.img');
+					$data['hash'] = randstr();
+					$data['pwd'] = md5($pwd.$data['hash']);
+					$data['username'] = $user; 
+					//$data['uid'] = input('post.uid') ;
+					$data['emali'] = input('post.emali');
+					$data['mark'] = input('post.mark');
+					$data['truename'] = input('post.truename');
+					$data['status'] = input('post.status')=='on'? 1 :0;
+					$data['addtime'] = time();
+					
+					$data['power'] = $this->defalutPower;
+
+					$ret = $user_db->addUser($data);
+					$this->setflash('添加'.$user.'账号成功');
+				}
 			}
-			$pwd = input('post.pwd') ? input('post.pwd') :$this->error('请输入密码');
-			$data['img'] = input('post.img');
-			$data['hash'] = randstr();
-			$data['pwd'] = md5($pwd.$data['hash']);
-			$data['username'] = $user; 
-			$data['uid'] = input('post.uid') ;
-			$data['emali'] = input('post.emali');
-			$data['mark'] = input('post.mark');
-			$data['truename'] = input('post.truename');
-			$data['status'] = input('post.status')=='on'? 1 :0;
-			$data['addtime'] = time();
-
-			$this->res($user_db->addUser($data));exit;
-
 			
-		}else{
-
-			$group_db = new UserGroupModel;
-
-			$group = $group_db->getGroup();
-
-			$this->assign('group',$group);
-			return $this->fetch();
 		}
+
+		$group_db = new UserGroupModel;
+
+		$group = $group_db->getGroup();
+
+		$this->assign('arr',$arr);
+		$this->assign('group',$group);
+		return $this->fetch();
 	}
 
 	function edit(){
@@ -64,12 +75,16 @@ class User extends Admin
 		$id = input('?get.id') ? input('get.id') : $this->error('参数错误');
 		$user_db = new UserModel;
 
+		if( $user_db->checkAdmin($id) ){
+			$this->error('没有权限操作admin管理员','User/index');
+		}
+
 		if( request()->isPost() ){ 
 			//提交post  input('files')
 			$user_hash = $user_db->getUserHash(input('get.id'));
 
 			$data['pwd'] = md5(input('post.pwd').$user_hash);
-			$data['uid'] = input('post.uid') ;
+			//$data['uid'] = input('post.uid') ;
 			$data['truename'] = input('post.truename');
 			$data['emali'] = input('post.emali') ;
 			$data['mark'] = input('post.mark');
@@ -81,9 +96,9 @@ class User extends Admin
 
 			$ret = $user_db->editUser($data,$map);
 			if ($ret) {
-				$this->success('操作成功','index');
+				$this->setflash('修改成功');
 			}else{
-				$this->error('未作更改');
+				$this->setflash('未作更改');
 			}
 
 			
@@ -106,7 +121,12 @@ class User extends Admin
 	public function del(){
 		$id = input('get.id') ? input('get.id') : $this->error('参数错误');
 		$user_db = new UserModel();
-		$this->res($user_db->delUser($id));
+		$is_admin = $user_db->where('id',$id)->value('username');
+		if( $is_admin == 'admin' ){
+			$this->errorflash('没有权限操作admin管理员');
+		}
+		$user_db->delUser($id);
+		$this->setflash('删除成功！','user/index');
 	}
 
 	public function ajax_uploadimg(){
@@ -132,5 +152,24 @@ class User extends Admin
 			return $res;
 		}
 	}
+
+	function set_power(){
+		$id = input('get.id') ? input('get.id') : $this->error('参数错误');
+
+		$db = new UserModel;
+
+		if( request()->isPost()){
+			$data['power'] = implode(',', $_POST['powers'] );
+			$data['power'] = $this->defalutPower.$data['power'] ;
+			$ret = $db->where('id',$id)->update($data);
+			$ret ? $this->setflash('修改权限成功！'): $this->setflash('没有修改权限');
+		}
+
+		$power = $db->where('id',$id)->value('power');
+		$arr_power = explode(',', $power);
+		$this->assign('powers',$arr_power);
+		return $this->fetch('power');
+	}
+	
 
 }

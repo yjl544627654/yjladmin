@@ -24,13 +24,13 @@ class UserModel extends Model
 		
 	}
 
-	function getList($num = 20){
-		$list =  $this->paginate($num);
+	function getList($where='' ,$num = 20){
+		$list =  $this->where($where)->paginate($num);
 		return $list;
 	}
 
 	function getOneUser($id){
-		return $this->where('id',$id)->find()->toArray();
+		return $this->where('id',$id)->find();
 	}
 
 	public function editUser($data,$where){
@@ -59,6 +59,15 @@ class UserModel extends Model
 
 	public function delUser($id){
 		return $this->where('id',$id)->delete($id);
+	}
+
+	public function checkAdmin($id){
+		$user = $this->where('id',$id)->value('username');
+		if($user == 'admin'){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 }

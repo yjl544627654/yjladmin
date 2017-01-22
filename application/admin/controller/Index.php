@@ -3,7 +3,8 @@ namespace app\admin\controller;
 use \app\admin\admin;
 use \think\Db; 
 use \think\Request;
-use \app\admin\model\settingModel;
+use \app\admin\model\SettingModel;
+use \think\Session;
 
 class Index extends Admin
 {
@@ -20,7 +21,7 @@ class Index extends Admin
         $data['server'] = $_SERVER['SERVER_SOFTWARE'];
         $data['http'] =  $_SERVER["HTTP_HOST"];
 
-        $db = new settingModel;
+        $db = new settingModel();
         $data['site_title'] = $db->getFirst('site_title');
         $data['site_describe'] = $db->getFirst('site_describe');
         $data['site_key'] = $db->getFirst('site_key');
@@ -69,8 +70,6 @@ class Index extends Admin
         //分页带url参数
         //->paginate(3,false,['query' => ['id'=>$id]]);
 
-
-
         dump($ret);
         
         $url = Request::instance();
@@ -81,5 +80,15 @@ class Index extends Admin
             return $this->fetch();
         }
 		
+    }
+
+    public function sessoin1(){
+        Session::flash('test','ok');
+        echo 1;
+    }
+
+    public function sessoin2(){
+        echo Session::get('test');
+        Session::flush();
     }
 }

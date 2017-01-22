@@ -2,12 +2,13 @@
 
 <body data-type="widgets" class="theme-white">
     {load href="/public/assets/js/theme.js" /}
+    {include file="Common/msg"}
     <div class="am-g tpl-g">
         <!-- 头部 -->
         <header>
             <!-- logo -->
             <div class="am-fl tpl-header-logo">
-                <a href="javascript:;"><img src="/public/assets/img/logo.png" alt=""></a>
+                <a href="javascript:;"><img src="/public/assets/admin_logo.png" alt=""></a>
             </div>
             <!-- 右侧内容 -->
             <div class="tpl-header-fluid">
@@ -40,6 +41,7 @@
                                 设置
                             </a>
 
+
                             <!-- 弹出列表 -->
                             <ul class="am-dropdown-content tpl-dropdown-content">
                                 <li class="tpl-dropdown-menu-notifications">
@@ -56,6 +58,15 @@
                                         <div class="tpl-dropdown-menu-notifications-title">
                                             <i class="am-icon-star"></i>
                                             <span> 站点设置</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="tpl-dropdown-menu-notifications">
+                                    <a href="{:url('login/cacheClear')}" class="tpl-dropdown-menu-notifications-item am-cf">
+                                        <div class="tpl-dropdown-menu-notifications-title">
+                                            &nbsp;
+                                            <i class="am-icon-undo"></i>
+                                            <span> 清空缓存</span>
                                         </div>
                                     </a>
                                 </li>
@@ -94,13 +105,14 @@
             </div>
         </div> -->
        {load href="/public/assets/js/jquery-2.0.3.min.js" /}
-       
+
         <!-- 侧边导航栏 -->
        {include file='Common/left'}
 
         <!-- 内容区域 -->
         {block name="main"}主内容{/block}
         <!-- 内容区域 end-->  
+
 
     </div>
     </div>

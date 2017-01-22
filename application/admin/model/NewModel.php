@@ -27,7 +27,7 @@ class NewModel extends Model
 
 	
 	public function getNew($where='',$num = 20){
-		$list =  $this->where($where)->field('id,sort,title,auth,addtime,cate_id')->paginate($num);
+		$list =  $this->where($where)->order('id','desc')->field('id,sort,title,auth,addtime,cate_id')->paginate($num);
 		return $list;
 	}
 

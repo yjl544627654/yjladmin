@@ -14,7 +14,6 @@
             </div>
 
             <div class="row-content am-cf">
-
                 <div class="row">
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                         <div class="widget am-cf">
@@ -30,14 +29,14 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">文章标题</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="title" value="" name="title">
+                                            <input type="text" class="tpl-form-input" id="title" value="{$arr.title}" name="title">
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">作者</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="auth" value="" name="auth" placeholder="默认为本账号">
+                                            <input type="text" class="tpl-form-input" id="auth" value="{$arr.auth}" name="auth" placeholder="默认为本账号">
                                         </div>
                                     </div>
 
@@ -54,7 +53,7 @@
                                         <div class="am-u-sm-9">
                                         <select data-am-selected style="display: none;" name='uid'>
                                             {volist name="cate" id='catelist'}
-                                                <option value="{$catelist.id}">{$catelist.cate_name}</option>
+                                                <option value="{$catelist.id}" {eq name="$arr.uid" value="$catelist.id" } selected="" {/eq} >{$catelist.cate_name}</option>
                                             {/volist}
                                         </select>
                                         </div>
@@ -78,21 +77,21 @@
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">摘要</label>
                                         <div class="am-u-sm-9">
-                                            <textarea class="" rows="5" id="user-intro" placeholder="请输入文章摘要" value='' name="e_title"></textarea>
+                                            <textarea class="" rows="5" id="user-intro" placeholder="请输入文章摘要" value='' name="e_title">{$arr.e_title}</textarea>
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">排序</label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" class="tpl-form-input" id="auth" value="" name="sort" placeholder="倒序排序">
+                                            <input type="text" class="tpl-form-input" id="auth" value="{$arr.sort}" name="sort" placeholder="倒序排序">
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
                                         <label for="user-weibo" class="am-u-sm-3 am-form-label">内容</label>
                                         <div class="am-u-sm-9">
-                                            <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
+                                            <script id="editor" type="text/plain" style="width:100%;height:500px;">{$arr.editorValue}</script>
                                         </div>
                                     </div>
 
@@ -109,8 +108,8 @@
                 </div>
             </div>
         </div>
+        
 {load href='/public/assets/css/ueditor.config.js'}
-
 {load href='/public/assets/js/ueditor.config.js'}
 {load href='/public/assets/js/ueditor.all.min.js'}
 {load href='/public/assets/js/lang/zh-cn/zh-cn.js'}

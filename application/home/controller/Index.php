@@ -10,7 +10,7 @@ use \app\admin\model\AdverModel;
 class Index extends Home
 {
     public function index()
-    {   
+    {    
         //banner 图
         $db_adv = new AdverModel();
         $db_new = new NewModel();
@@ -45,11 +45,14 @@ class Index extends Home
         $this->assign('banner',$banner);
         $this->assign('topbanner',$topbanner);
         $this->assign('show_delafut',$show_delafut);
+
+        cache('index/index', $this->fetch() );
         return $this->fetch();
+
     }
 
     public function portal(){
-        
+
         $db_new = new NewModel();
         //资讯排行
         $orderlist = NewModel::order('click desc,  addtime desc , sort desc  ')->limit(11)->select();
@@ -103,6 +106,8 @@ class Index extends Home
         $this->assign('shizhanlist',$shizhanlist);
         $this->assign('nonglist',$nonglist);
         $this->assign('zhenwulist',$zhenwulist);
+
+        cache('index/portal',$this->fetch());
         return $this->fetch();
         
     }
@@ -141,6 +146,8 @@ class Index extends Home
         $this->assign('catelist',$catelist);
         $this->assign('uplowdata',$uplowdata);
         $this->assign('show',$show);
+
+        cache('index/portal_show&id='.$id,$this->fetch());
         return $this->fetch();
     }
 
@@ -162,6 +169,7 @@ class Index extends Home
         $this->assign('lists',$list);
         $this->assign('catelist',$catelist);
 
+        cache('index/catelist&id='.$id,$this->fetch());
         return $this->fetch();
     }
 
@@ -175,6 +183,7 @@ class Index extends Home
 
         $this->assign('base',$base);
 
+        cache('index/base',$this->fetch());
         return $this->fetch();
 
     }
@@ -188,6 +197,7 @@ class Index extends Home
 
         $this->assign('base',$base);
 
+        cache('index/base_show&id='.$id,$this->fetch());
         return $this->fetch();
 
     }
@@ -198,6 +208,8 @@ class Index extends Home
         $db_new = new NewModel();
         $list = $db_new->where('cate_id','12')->select();
         $this->assign('joblist',$list);
+
+        cache('index/job',$this->fetch());
         return $this->fetch();
     }
 
@@ -219,6 +231,7 @@ class Index extends Home
                 else   $this->error('留言失败！');
 
         }else{
+             cache('index/msg',$this->fetch());
              return $this->fetch();
         }
        
@@ -231,6 +244,8 @@ class Index extends Home
         $db_nav = new \app\admin\model\NavModel();
         $show = $db_nav->where('id',$id)->find();
         $this->assign('show',$show);
+
+        cache('index/alonepage&id='.$id,$this->fetch());
         return $this->fetch();
     }
 

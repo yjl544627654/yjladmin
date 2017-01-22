@@ -5,6 +5,7 @@ use \think\Db;
 use \think\Request;
 use \app\admin\model\UserModel;
 use \think\Session;
+use \think\Cache;
 
 class Login extends Admin
 {
@@ -25,7 +26,7 @@ class Login extends Admin
 					$img = $userdb->getUserImg($user);
 
 					$user_id = $userdb->where('username',$user)->value('id');
-					Session::set('user_id',$user_id);
+					Session::set('admin_id',$user_id);
 					Session::set('user',$user);
 					Session::set('is_login',true);
 					Session::set('img',$img);
@@ -55,4 +56,16 @@ class Login extends Admin
 
 		$this->success('退出成功！',url('index/index') );
 	}
+
+	function cacheClear(){
+		Cache::clear(); 
+		$this->success('清理缓存成功');
+	}
+
+	function notpower(){
+
+		return $this->fetch();
+		exit();
+	}
+	
 }

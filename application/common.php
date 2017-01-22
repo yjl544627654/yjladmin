@@ -38,3 +38,20 @@ function msg($msg){
             <script type="text/javascript"> msg("'.$msg.'") </script>';
   return; 
 }
+
+//根据confi 配置读取缓存
+function get_cache($name){
+   
+  if( config('is_cache') && cache($name) ){
+    echo  cache($name);
+    exit();
+  }
+  
+}
+
+//检测权限是否已选
+function cPower($arr , $name){
+  if( in_array($name , $arr)){
+    echo 'checked';
+  }
+}

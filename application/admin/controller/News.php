@@ -12,11 +12,13 @@ class News extends Admin
 	public function index(){
 
 		$new_db = new NewModel;
-		
 		$cate_db = new CategoryModel;
-
+		$title = input('get.title');
 		if( !empty(input('get.cate')) ){
-			$where = ['cate_id'=>input('get.cate')];
+			$where['cate_id'] = input('get.cate');
+		}
+		if( isset($title) ){
+			$where['title'] = ['like',"%".$title."%"] ;
 		}
 		$list = $new_db->getNew($where);
 		$cate = $cate_db->getCate();
@@ -34,22 +36,26 @@ class News extends Admin
 		$new_db = new NewModel;
 
 		if( request()->isPost() ){
-			
+				
 			$data['title'] = $this->validata('title','请填写标题');
 			$data['e_title'] = $this->validata('e_title','请填写摘要');
 			$data['cate_id'] = $this->validata('uid','请选择分类');
-			$data['img'] = input('post.img');
-			$data['content'] = $this->validata('editorValue','填写内容');
-			$data['addtime'] = time();
-			$data['auth'] = input('post.auth') ? input('post.auth') : Session::get('user') ;
-			$data['sort'] = input('post.sort') ? input('post.sort') : 0;
-			$this->res($new_db->addNews($data));
+			$data['content'] = $this->validata('editorValue','请填写内容');
 
-		}else{
-			$cate = $cate_db->getCate();
-			$this->assign('cate',$cate);
-			return $this->fetch();
+			if( $this->checkflash() ){
+				$data['img'] = input('post.img');
+				$data['addtime'] = time();
+				$data['auth'] = input('post.auth') ? input('post.auth') : Session::get('user') ;
+				$data['sort'] = input('post.sort') ? input('post.sort') : 0;
+				$res = $new_db->addNews($data);
+				$res ? $this->setflash('添加文章成功！'):$this->errorflash('添加文章失败！');
+			}
 		}
+
+		$cate = $cate_db->getCate();
+		$this->assign('arr',input('post.') );
+		$this->assign('cate',$cate);
+		return $this->fetch();
 		
 	}
 
@@ -88,29 +94,35 @@ class News extends Admin
 			$data['e_title'] = $this->validata('e_title','请填写摘要');
 			$data['cate_id'] = $this->validata('uid','请选择分类');
 			$data['content'] = $this->validata('editorValue','填写内容');
-			$data['img'] = input('post.img');
-			$data['updatetime'] = time();
-			$data['auth'] = input('post.auth') ? input('post.auth') : Session::get('user') ;
-			$data['sort'] = input('post.sort') ? input('post.sort') : 0;
 
-			$map['id'] = $id;
-			$this->res($new_db->updateNew($map,$data));
+			if( $this->checkflash() ){
+				$data['img'] = input('post.img');
+				$data['updatetime'] = time();
+				$data['auth'] = input('post.auth') ? input('post.auth') : Session::get('user') ;
+				$data['sort'] = input('post.sort') ? input('post.sort') : 0;
 
-		}else{
-			$show = $new_db->getOneNew($id)->toArray();
-			
-			$cate = $cate_db->getCate();
-			$this->assign('cate',$cate);
-			$this->assign('show',$show);
-			return $this->fetch();
+				$map['id'] = $id;
+				$new_db->updateNew($map,$data);
+				$this->setflash('修改文章成功！');
+			}
 		}
+
+		$show = $new_db->getOneNew($id)->toArray();
+		
+		$cate = $cate_db->getCate();
+		$this->assign('cate',$cate);
+		$this->assign('show',$show);
+		return $this->fetch();
+		
 	}
 
 	public function del(){
 		$new_db = new NewModel;
 		$id = input('?get.id') ? input('get.id') : $this->error('参数错误');
 		$map['id'] = $id;
-		$this->res( $new_db->delNew($map));
+		$res = $new_db->delNew($map) ;
+		$res ? $this->setflash('删除文章成功！','index') : $this->errorflash('删除文章失败！');
+
 	}
 
 	public function cate(){
@@ -132,10 +144,10 @@ class News extends Admin
 
 	public function cate_add(){
 		$cate_db = new CategoryModel;
-		$data['cate_name'] = $this->validata('cate_name','请输入分类名');
+		$data['cate_name'] = $this->validata('cate','请输入分类名','cate');
 		$data['sort'] = input('?post.sort')?input('post.sort'):0;
 		$data['addtime'] = time();
-		$this->res($cate_db->addCate($data));
+		$res = $cate_db->addCate($data);
 	}
 
 	public function cate_del(){

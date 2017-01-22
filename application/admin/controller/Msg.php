@@ -11,8 +11,10 @@ class Msg extends Admin
 	public function index(){
 
 		$db = new MsgModel;
-
-		$list = $db->paginate(20);
+		if( request()->isGet() ){
+			$map['username'] = ['like',"%".input('get.username')."%"] ;
+		}
+		$list = $db->where($map?$map:'')->paginate(20);
 		$this->assign('list',$list);
 		return $this->fetch();
 	}

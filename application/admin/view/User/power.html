@@ -1,0 +1,239 @@
+{extend name='base' /}
+
+{block name='main'}
+
+    <div class="tpl-content-wrapper">
+
+            <div class="container-fluid am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> <a href="index">管理员管理</a> > 修改管理员权限 </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row-content am-cf">
+               	{include file="Common/msg"}
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">{$user.username}</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body am-fr">
+
+                                <form class="am-form tpl-form-border-form tpl-form-border-br" method="post" enctype="multipart/form-data" id="form1">
+
+                                	<div class="am-g setting">
+									  <div class="am-u-sm-4">
+									  		<label class="am-checkbox-inline" onclick="changebox('setting')">
+										      <h2><input type="checkbox" value="setting" name="powers[]" {:cPower($powers,'setting')} >系统</h2>
+										    </label>
+									  </div>
+
+									  <div class="am-u-sm-8">
+									  		<div class="am-form-group">
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="setting/site" name="powers[]" {:cPower($powers,'setting/site')}>站点设置
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="setting/nav" name="powers[]" {:cPower($powers,'setting/nav')}> 查看导航
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="setting/edit" name="powers[]" {:cPower($powers,'setting/edit')}> 修改导航
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="setting/nav_del" name="powers[]" {:cPower($powers,'setting/nav_del')}> 删除导航
+										      </label>
+										    </div>
+									  </div>
+									</div>
+									
+
+									<div class="am-g user" >
+									  <div class="am-u-sm-4">
+									  		<label class="am-checkbox-inline" onclick="changebox('user')">
+										      <h2><input type="checkbox" value="user" name="powers[]" {:cPower($powers,'user')} >用户</h2>
+										    </label>
+									  </div>
+									  <div class="am-u-sm-8">
+									  		<div class="am-form-group">
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="user/index" name="powers[]" {:cPower($powers,'user/index')}>管理员管理
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="user/add" name="powers[]" {:cPower($powers,'user/add')}> 新增管理员
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="user/edit" name="powers[]" {:cPower($powers,'user/edit')}> 编辑管理员
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="user/del" name="powers[]" {:cPower($powers,'user/del')}> 删除管理员
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="user/set_power" name="powers[]" {:cPower($powers,'user/set_power')}> 编辑管理员权限
+										      </label>
+										      <br>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="members/index" name="powers[]" {:cPower($powers,'members/index')}> 用户管理
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="members/edit" name="powers[]" {:cPower($powers,'members/edit')}> 编辑用户
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="members/del" name="powers[]" {:cPower($powers,'members/del')}> 删除用户
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="members/add" name="powers[]" {:cPower($powers,'members/add')}> 新增用户
+										      </label>
+
+
+										    </div>
+									  </div>
+									</div>
+
+									<div class="am-g news">
+									  <div class="am-u-sm-4">
+									  		<label class="am-checkbox-inline" onclick="changebox('news')">
+										      <h2><input type="checkbox" value="news" name="powers[]" {:cPower($powers,'news')} >资讯</h2>
+										    </label>
+									  </div>
+									  <div class="am-u-sm-8">
+									  		<div class="am-form-group">
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="news/index" name="powers[]" {:cPower($powers,'news/index')}>文章管理
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="news/add" name="powers[]" {:cPower($powers,'news/add')}> 新增文章
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="news/edit" name="powers[]" {:cPower($powers,'news/edit')}> 编辑文章
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="news/del" name="powers[]" {:cPower($powers,'news/del')}> 删除文章
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="news/cate" name="powers[]" {:cPower($powers,'news/cate')}>分类管理
+										      </label>
+										    </div>
+									  </div>
+									</div>
+
+									<div class="am-g adver ">
+									  <div class="am-u-sm-4">
+									  		<label class="am-checkbox-inline" onclick="changebox('adver')">
+										      <h2><input type="checkbox" value="adver" name="powers[]" {:cPower($powers,'adver')} >广告设置</h2>
+										    </label>
+									  </div>
+									  <div class="am-u-sm-8">
+									  		<div class="am-form-group">
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="adver/index" name="powers[]" {:cPower($powers,'adver/index')}>广告列表
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="adver/add" name="powers[]" {:cPower($powers,'adver/add')}> 新增广告
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="adver/edit" name="powers[]" {:cPower($powers,'adver/edit')}> 编辑广告
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="adver/del" name="powers[]" {:cPower($powers,'adver/del')}> 删除广告
+										      </label>
+										    </div>
+									  </div>
+									</div>
+
+									<div class="am-g product">
+									  <div class="am-u-sm-4">
+									  		<label class="am-checkbox-inline" onclick="changebox('product')">
+										      <h2><input type="checkbox" value="product" name="powers[]" {:cPower($powers,'product')}>产品中心</h2>
+										    </label>
+									  </div>
+									  <div class="am-u-sm-8">
+									  		<div class="am-form-group">
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="product/index" name="powers[]" {:cPower($powers,'product/index')}>产品相册
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="product/add" name="powers[]" {:cPower($powers,'product/add')}> 新增产品
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="product/edit" name="powers[]" {:cPower($powers,'product/edit')}> 编辑产品
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="product/del" name="powers[]" {:cPower($powers,'product/del')}> 删除产品
+										      </label>
+										      <br>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="product/p_index" name="powers[]" {:cPower($powers,'product/p_index')}>相册管理
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="product/p_edit" name="powers[]" {:cPower($powers,'product/p_edit')}>编辑产品相片
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="product/p_add" name="powers[]" {:cPower($powers,'product/p_add')}>新增产品相片
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="product/del" name="powers[]" {:cPower($powers,'product/del')}>删除产品相片
+										      </label>
+
+
+										    </div>
+									  </div>
+									</div>
+
+									<div class="am-g msg">
+									  <div class="am-u-sm-4">
+									  		<label class="am-checkbox-inline" onclick="changebox('msg')">
+										      <h2><input type="checkbox" value="msg" name="powers[]" {:cPower($powers,'msg')}>评论留言</h2>
+										    </label>
+									  </div>
+									  <div class="am-u-sm-8">
+									  		<div class="am-form-group">
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="msg/index" name="powers[]" {:cPower($powers,'msg/index')}>留言中心
+										      </label>
+										      <label class="am-checkbox-inline">
+										        <input type="checkbox" value="msg/del" name="powers[]" {:cPower($powers,'msg/del')}> 删除留言
+										      </label>
+										    </div>
+									  </div>
+									</div>
+
+
+                                    <div class="am-form-group">
+                                        <div class="am-u-sm-9 am-u-sm-push-3">
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+<script type="text/javascript">
+									    
+    function changebox(name){
+    	var is_che = $('input[value="'+name+'"]').prop('checked') ;
+    	//alert(is_che) ; 
+    	if( is_che ){
+    		$('.'+name).find('input').prop('checked',false);
+    	}else{
+    		$('.'+name).find('input').prop('checked',true);
+    	}
+    	
+    }
+
+</script>
+
+
+
+
+{/block}

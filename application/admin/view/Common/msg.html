@@ -1,0 +1,46 @@
+
+<style type="text/css">
+	#msg_error{
+		position: fixed;
+		left: 200px;
+		top: 0px;
+		width: 50%;
+		z-index: 999999;
+		margin-top: 0px;
+		margin: 0px 12%;
+	}
+</style>
+
+{notempty name="$msg"}
+<div class="am-alert am-alert-success" data-am-alert id="msg_error">
+  <button type="button" class="am-close">&times;</button>
+  <p>{$msg}</p>
+</div>
+{/notempty}
+
+{if condition=" !is_array($error) "}
+{notempty name="$error"}
+<div class="am-alert am-alert-danger" data-am-alert id="msg_error">
+  <button type="button" class="am-close">&times;</button>
+  <p>{$error}</p>
+</div>
+{/notempty}
+{/if}
+
+<!-- 
+{for start="0" end="$msgcount" }
+<div class="am-alert am-alert-danger" data-am-alert id="msg_error">
+  <button type="button" class="am-close">&times;</button>
+  <p>{$errormsg[$i]}</p>
+</div>
+{/for} -->
+
+
+<script type="text/javascript" src="/public/assets/js/jquery-2.0.3.min.js "></script> 
+<script type="text/javascript">
+	function setout(){
+		$('#msg_error').alert('close')
+	}
+	setTimeout( setout , 3000);
+</script>
+

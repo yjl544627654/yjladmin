@@ -3,6 +3,7 @@ namespace app\home;
 use \think\Controller;
 use \app\admin\model\NavModel;
 use app\admin\model\SettingModel;
+use Think\Request;
 
 class Home extends Controller
 {
@@ -11,10 +12,31 @@ class Home extends Controller
 	{
 		parent::__construct();
 
-		//查询导航
-		
-		$navList = NavModel::where('nav_id','0')->order('sort',"desc")->select();
+		//缓存
+		$options = [
+		     // 缓存类型为File
+		    'type'   => 'File', 
+		     // 缓存有效期为永久有效
+		    'expire' => 0,
+		     // 指定缓存目录
+		    'path'   => APP_PATH . 'runtime/cache/', 
+		];
 
+		// 缓存初始化
+		// 不进行缓存初始化的话，默认使用配置文件中的缓存配置
+		cache($options);
+
+		$request  = Request::instance();
+		$ctrl = strtolower($request ->controller());
+		$action = strtolower($request->action());
+		$getarr = input('get.');
+		foreach ($getarr as $k => $v) {
+			$str .= "&{$k}={$v}";
+		}
+		get_cache($ctrl.'/'.$action.$str);  //获取缓存
+
+		$navList = NavModel::where('nav_id','0')->order('sort',"desc")->select();
+		//查询导航
 		$logo = SettingModel::getSetting('site_logo');  //网站logo
 		$ico = SettingModel::getSetting('site_ico'); 	//网站ico
 		$title = SettingModel::getSetting('site_title');  //网站标题
@@ -31,6 +53,9 @@ class Home extends Controller
 		$this->assign('site_ico',$ico['site_ico']);
 		$this->assign('site_logo',$logo['site_logo']);
 		$this->assign('navlist',$navList);
+
+		
+
 	}
 
 	public function validata($name ,$msg=null){

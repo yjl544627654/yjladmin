@@ -17,7 +17,7 @@
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
                                                 <button type="button" class="am-btn am-btn-default am-btn-success" onclick="jump('{:url("news/add")}')"><span class="am-icon-plus"></span> 新增</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-danger" onclick="jump('{:url("news/index")}')"><span class="am-icon-trash-o"></span> 清除搜索</button>
                                             </div>
                                         </div>
                                     </div>
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field ">
+                                        <input type="text" class="am-form-field " value="{$Think.get.title}" name="title">
                                         <span class="am-input-group-btn">
                                             <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="submit"></button>
                                         </span>
@@ -76,14 +76,16 @@
                                                         <a href="edit?id={$new.id}">
                                                             <i class="am-icon-pencil"></i> 编辑
                                                         </a>
-                                                        <a href="del?id={$new.id}}" class="tpl-table-black-operation-del">
+                                                        <a href="del?id={$new.id}" class="tpl-table-black-operation-del">
                                                             <i class="am-icon-trash"></i> 删除
                                                         </a>
                                                     </div>
                                                 </td>
                                             </tr>
                                         {/volist}
-                                            <!-- more data -->
+                                         {empty name="list"}
+                                            <tr><td>无更多信息</td></tr>
+                                         {/empty}
                                         </tbody>
                                     </table>
                                 </div>
