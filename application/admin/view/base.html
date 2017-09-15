@@ -1,14 +1,14 @@
 {include file='Common/header' ico="$setting.site_ico"  /}
 
 <body data-type="widgets" class="theme-white">
-    {load href="/public/assets/js/theme.js" /}
+    <script type="text/javascript" src="{$Think.PUBLIC_PATH}/assets/js/theme.js"></script>
     {include file="Common/msg"}
     <div class="am-g tpl-g">
         <!-- 头部 -->
         <header>
             <!-- logo -->
             <div class="am-fl tpl-header-logo">
-                <a href="javascript:;"><img src="/public/assets/admin_logo.png" alt=""></a>
+                <a href="javascript:;"><img src="{$Think.PUBLIC_PATH}/assets/admin_logo.png" alt=""></a>
             </div>
             <!-- 右侧内容 -->
             <div class="tpl-header-fluid">
@@ -104,7 +104,7 @@
                 </div>
             </div>
         </div> -->
-       {load href="/public/assets/js/jquery-2.0.3.min.js" /}
+       <script type="text/javascript" src="{$Think.PUBLIC_PATH}/assets/js/jquery-2.0.3.min.js"></script>
 
         <!-- 侧边导航栏 -->
        {include file='Common/left'}
@@ -117,11 +117,12 @@
     </div>
     </div>
 
-    {load href="/public/assets/js/amazeui.min.js" /}
-    {load href="/public/assets/js/amazeui.datatables.min.js" /}
-    {load href="/public/assets/js/dataTables.responsive.min.js" /}
-    {load href="/public/assets/js/app.js" /}
-    {load href="/public/assets/js/yjladmin.js" /}
+    <script type="text/javascript" src="{$Think.PUBLIC_PATH}/assets/js/amazeui.min.js"></script>
+    <script type="text/javascript" src="{$Think.PUBLIC_PATH}/assets/js/amazeui.datatables.min.js"></script>
+    <script type="text/javascript" src="{$Think.PUBLIC_PATH}/assets/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="{$Think.PUBLIC_PATH}/assets/js/yjladmin.js"></script>
+    <script type="text/javascript" src="{$Think.PUBLIC_PATH}/assets/js/app.js"></script>
+
 
     <script type="text/javascript">
         

@@ -1,22 +1,22 @@
 <?php
-//000000000000s:52056:"<!DOCTYPE html>
+//000000000000s:47302:"<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>南宁市电子商务公共服务平台</title>
+<title>一个人</title>
 <meta name="renderer" content="webkit">
-<meta name="keywords" content="南宁电商务服平台，公共服务平台，电子商务公共服务，南宁电商，南宁电子商务服务，电商资讯，南宁电商学院，南宁电商培训，南宁市电商项目申报">
-<meta name="description" content="南宁市电子商务服务平台以市场需求为导向，以机制创新、模式创新与集成创新为动力，以推动南宁产业转型升级为切入点，采用线上线下结合的服务模式，通过大数据等新一代信息技术，打造线上一站式服务绿色通道。">
+<meta name="keywords" content="">
+<meta name="description" content="">
 <meta name="generator" content="Discuz! X3.2">
 <meta name="author" content="Discuz! Team and Comsenz UI Team">
 <meta name="copyright" content="2001-2013 Comsenz Inc.">
 <meta name="MSSmartTagsPreventParsing" content="True">
 <meta http-equiv="MSThemeCompatible" content="Yes">
-<meta name="application-name" content="南宁市电子商务公共服务平台">
-<meta name="msapplication-tooltip" content="南宁市电子商务公共服务平台">
-<link rel="icon" type="image/png" href="/public/assets/img/site_ico/20161221\4fd71114bc9ce23e317547598790e892.png">
+<meta name="application-name" content="一个人">
+<meta name="msapplication-tooltip" content="一个人">
+<link rel="icon" type="image/png" href="/assets/img/site_ico/20170816/1f17fd64e72c046c4f7e328d001ca0a6.jpg">
 </head>
 
 <style>
@@ -54,32 +54,29 @@
   
   <div class="wp-container">
       <h1>
-      <a href="" title="南宁市电子商务公共服务平台" class="logo pull-left">
-        <img src="/public/assets/img/site_logo/20170104\d4499a4c215ff12860cc997a4531af02.png" alt="南宁市电子商务公共服务平台" border="0" >
+      <a href="" title="一个人" class="logo pull-left">
+        <img src="/assets/img/site_logo/20170816/d331e2a825a07a48ef0b8b510e851b06.jpg" alt="一个人" border="0" >
       </a></h1>
       <nav class="nav pull-right">
       <ul class="nav-bar list-unstyled pull-left" id="nav">
       
               <li id="mn_portal">
-                      <a href="/home/index/index.html" hidefocus="true">首页</a>
+                      <a href="/yjladmin/home/index/index.html" hidefocus="true">首页</a>
                   </li>
               <li id="mn_portal">
-                      <a href="/home/index/portal.html" hidefocus="true">动态资讯</a>
+                      <a href="/yjladmin/home/index/portal.html" hidefocus="true">动态资讯</a>
                   </li>
               <li id="mn_portal">
-                      <a href="/home/index/msg.html" hidefocus="true">留言中心</a>
+                      <a href="/yjladmin/home/index/msg.html" hidefocus="true">留言中心</a>
                   </li>
               <li id="mn_portal">
-                      <a href="/home/index/job.html" hidefocus="true">人才招聘</a>
+                      <a href="/yjladmin/home/index/job.html" hidefocus="true">人才招聘</a>
                   </li>
               <li id="mn_portal">
-                      <a href="/home/index/base.html" hidefocus="true">产业基地</a>
+                      <a href="/yjladmin/home/index/base.html" hidefocus="true">产业基地</a>
                   </li>
               <li id="mn_portal">
-                      <a href="/home/index/alonepage.html?id=11" hidefocus="true">单页面</a>
-                  </li>
-              <li id="mn_portal">
-                      <a href="/home/index/alonepage.html?id=12" hidefocus="true">1111</a>
+                      <a href="/yjladmin/home/index/alonepage.html?id=11" hidefocus="true">单页面</a>
                   </li>
             </ul>
              <div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div>
@@ -111,13 +108,7 @@
 <div id="ys_diyfocus" class="area"><div id="frameeTpJ2w" class=" frame move-span cl frame-1"><div id="frameeTpJ2w_left" class="column frame-1-c"><div id="frameeTpJ2w_left_temp" class="move-span temp"></div><div id="portal_block_70" class="block move-span"><div id="portal_block_70_content" class="dxb_bc"><div class="portal_block_summary"><div class="ys-focus slidebox" id="0.8091105581863307" style="display: block;">
   <div class="slide_pic ">
     <ul class="slideshow">
-    	      <li style="display: block;"> 
-      	<div> <img src="/public/assets/img/adver/20161230\9fd0dc54d6dd1bc41905d2cfe02e92e9.jpg" height="612" width="1920"> </div>
-      </li>
-      	      <li style="display: block;"> 
-      	<div> <img src="/public/assets/img/adver/20161230\5ef681bdb5f2a79e35c52dad552757f5.jpg" height="612" width="1920"> </div>
-      </li>
-      	      >     
+    	      >     
     </ul>
   </div>
   <div class="slidebar"></div>
@@ -134,7 +125,7 @@
 <div id="ys_diy10" class="area">
 <div id="frameU63g5M" class=" frame move-span cl frame-3-1">
 <div class="frame-title title" style="background-image:none;background-repeat:repeat;background-color:transparent;">
-	<span class="titletext" style="font-size:24px;"><a href="/home/index/portal.html" target="_blank" style="color:rgb(97, 97, 97) !important;">
+	<span class="titletext" style="font-size:24px;"><a href="/yjladmin/home/index/portal.html" target="_blank" style="color:rgb(97, 97, 97) !important;">
 		<img src="/public/home/img/hangye.png" class="vm" alt="行业动态">行业动态</a>
 	</span>
 	<span class="subtitle" style="font-size:14px;float:right;"><a href="http://www.nnecps.com/portal.php?mod=topic&amp;topicid=3" target="_blank" style="color:rgb(97, 97, 97) !important;">+more</a></span>
@@ -145,57 +136,12 @@
 <div id="portal_block_93_content" class="dxb_bc">
 <div class="hydt slidebox" style="display: block;" >
 	<ul class="hydt_ul slideshow">
-				<li class="hydt_li" style="display: none;" id="show_id_7">
-			<a href="">
-				<img src="/public/assets/img/adver/20161228\5ba954dc6c6541eef6e365b334282955.jpg" width="860" height="400">
-				<span class="title">南宁高新区启动国家电子商务示范基地电子商务专业人才培训 ...</span>
-			</a>
-		</li>
-				<li class="hydt_li" style="display: none;" id="show_id_8">
-			<a href="">
-				<img src="/public/assets/img/adver/20161228\8823360f5c93f5b7a83d0316d923ef48.jpg" width="860" height="400">
-				<span class="title">“党旗领航·电商扶贫”行动在隆安县开展</span>
-			</a>
-		</li>
-				<li class="hydt_li" style="display: none;" id="show_id_9">
-			<a href="">
-				<img src="/public/assets/img/adver/20161228\77b3262d3511f1333944e95c514467ce.jpg" width="860" height="400">
-				<span class="title">2016广西电子商务创业大赛决赛在南宁举行</span>
-			</a>
-		</li>
-				<li class="hydt_li" style="display: none;" id="show_id_10">
-			<a href="">
-				<img src="/public/assets/img/adver/20161228\0dd70994c57cd839bf0163325f4bcc56.jpg" width="860" height="400">
-				<span class="title">2016年南宁市电子商务创业大赛暨广西电子商务创业大赛南宁赛区决赛圆满落幕 ...</span>
-			</a>
-		</li>
-				<li class="hydt_li" style="display: none;" id="show_id_11">
-			<a href="">
-				<img src="/public/assets/img/adver/20161228\d0d66718b0a679f1bab95dfbddfc504f.jpg" width="860" height="400">
-				<span class="title">2016年网商必学 网商提高班-之无线掘金</span>
-			</a>
-		</li>
 		
 	</ul>
 <div class="slidebar">
-		<div id="hydt_img1" class="hydt_img7"  onclick="showImg('show_id_7')">
-		<img src="/public/assets/img/adver/20161228\5ba954dc6c6541eef6e365b334282955.jpg" width="163" height="70">
-	</div>
-		<div id="hydt_img1" class="hydt_img8"  onclick="showImg('show_id_8')">
-		<img src="/public/assets/img/adver/20161228\8823360f5c93f5b7a83d0316d923ef48.jpg" width="163" height="70">
-	</div>
-		<div id="hydt_img1" class="hydt_img9"  onclick="showImg('show_id_9')">
-		<img src="/public/assets/img/adver/20161228\77b3262d3511f1333944e95c514467ce.jpg" width="163" height="70">
-	</div>
-		<div id="hydt_img1" class="hydt_img10"  onclick="showImg('show_id_10')">
-		<img src="/public/assets/img/adver/20161228\0dd70994c57cd839bf0163325f4bcc56.jpg" width="163" height="70">
-	</div>
-		<div id="hydt_img1" class="hydt_img11"  onclick="showImg('show_id_11')">
-		<img src="/public/assets/img/adver/20161228\d0d66718b0a679f1bab95dfbddfc504f.jpg" width="163" height="70">
-	</div>
 	</div>
 </div>
-<input type="hidden" name="show_delafut" id="show_delafut" value="7">
+<input type="hidden" name="show_delafut" id="show_delafut" value="">
  
 </div>
 </div>
@@ -216,33 +162,33 @@
 <div id="tabofCY3O_content" class="tb-c">
 <div id="portal_block_152_content" class="dxb_bc"> 
 <div class="new-lie" style="display: block;" id="new1">
-			<a href="/home/index/portal_show.html?id=12" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >“1元木马”现身网络 警方揭秘：小心支付1元少万元</b></a>
+			<a href="/yjladmin/home/index/portal_show.html?id=12" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >“1元木马”现身网络 警方揭秘：小心支付1元少万元</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
-        		<a href="/home/index/portal_show.html?id=14" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >移动支付烽烟再起 银联扫码四招抢夺线下支付</b></a>
+        		<a href="/yjladmin/home/index/portal_show.html?id=14" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >移动支付烽烟再起 银联扫码四招抢夺线下支付</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
-        		<a href="/home/index/portal_show.html?id=22" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >2016南宁电商购物节钜惠全城四大主题抢购日买不停</b></a>
+        		<a href="/yjladmin/home/index/portal_show.html?id=22" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >2016南宁电商购物节钜惠全城四大主题抢购日买不停</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
-        		<a href="/home/index/portal_show.html?id=28" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >南宁加快电子商务和信息服务业发展</b></a>
+        		<a href="/yjladmin/home/index/portal_show.html?id=28" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >南宁加快电子商务和信息服务业发展</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
         </div>
 
 <div class="new-lie" style="display: none;" id="new9">
-            <a href="/home/index/portal_show.html?id=23" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >图解你身边即将出现的黑科技</b></a>
+            <a href="/yjladmin/home/index/portal_show.html?id=23" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >图解你身边即将出现的黑科技</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
-                <a href="/home/index/portal_show.html?id=31" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >大码女装店铺在大促40倍爆发的奥秘</b></a>
+                <a href="/yjladmin/home/index/portal_show.html?id=31" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >大码女装店铺在大促40倍爆发的奥秘</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
-                <a href="/home/index/portal_show.html?id=32" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >新品5天手淘搜索2000攻略</b></a>
+                <a href="/yjladmin/home/index/portal_show.html?id=32" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >新品5天手淘搜索2000攻略</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
-                <a href="/home/index/portal_show.html?id=33" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >淘宝店铺装修尺寸大全</b></a>
+                <a href="/yjladmin/home/index/portal_show.html?id=33" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >淘宝店铺装修尺寸大全</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
-                <a href="/home/index/portal_show.html?id=34" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >如何不在互联网广告中花冤枉钱</b></a>
+                <a href="/yjladmin/home/index/portal_show.html?id=34" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >如何不在互联网广告中花冤枉钱</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
         </div>
 
 <div class="new-lie" style="display: none;" id="new3">
-            <a href="/home/index/portal_show.html?id=15" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >银联拉拢中小支付机构对抗微信支付宝 但移动支付格局已很难改变 ...</b></a>
+            <a href="/yjladmin/home/index/portal_show.html?id=15" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >银联拉拢中小支付机构对抗微信支付宝 但移动支付格局已很难改变 ...</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
-                <a href="/home/index/portal_show.html?id=19" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >银行卡人均消费额度连跌 第三方支付迅速抢占市场</b></a>
+                <a href="/yjladmin/home/index/portal_show.html?id=19" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap; width: 250px;"><b >银行卡人均消费额度连跌 第三方支付迅速抢占市场</b></a>
             <em class="y" style="line-height: 35px;">12-27</em>
         </div>
 
@@ -284,13 +230,13 @@
       <div class="slideshow">
        
 	      <div style="display: block;">
-                         <dd><a href="/home/index/portal_show.html?id=25"></a><a href="/home/index/portal_show.html?id=25">创新奋进 南宁桂之邦荣誉摘取CMIIC2016品牌盛会电商先锋奖</a><time>12-27</time>
+                         <dd><a href="/yjladmin/home/index/portal_show.html?id=25"></a><a href="/yjladmin/home/index/portal_show.html?id=25">创新奋进 南宁桂之邦荣誉摘取CMIIC2016品牌盛会电商先锋奖</a><time>12-27</time>
 	       </dd>
-                        <dd><a href="/home/index/portal_show.html?id=27"></a><a href="/home/index/portal_show.html?id=27">9.28 秘书处走访会员单位 广西览众山食品有限公司</a><time>12-27</time>
+                        <dd><a href="/yjladmin/home/index/portal_show.html?id=27"></a><a href="/yjladmin/home/index/portal_show.html?id=27">9.28 秘书处走访会员单位 广西览众山食品有限公司</a><time>12-27</time>
 	       </dd>
-                        <dd><a href="/home/index/portal_show.html?id=29"></a><a href="/home/index/portal_show.html?id=29">9.25 举行9月份“邮政服务电商发展”交流会</a><time>12-27</time>
+                        <dd><a href="/yjladmin/home/index/portal_show.html?id=29"></a><a href="/yjladmin/home/index/portal_show.html?id=29">9.25 举行9月份“邮政服务电商发展”交流会</a><time>12-27</time>
 	       </dd>
-                        <dd><a href="/home/index/portal_show.html?id=30"></a><a href="/home/index/portal_show.html?id=30">走访会员单位 广西泛舟财务 广西铭政图远教育</a><time>12-27</time>
+                        <dd><a href="/yjladmin/home/index/portal_show.html?id=30"></a><a href="/yjladmin/home/index/portal_show.html?id=30">走访会员单位 广西泛舟财务 广西铭政图远教育</a><time>12-27</time>
 	       </dd>
                       </div>
 	      
@@ -304,17 +250,17 @@
       <h4>网络支付<span class="subtitle" style="float:right"><a href="/home/index/catelist.html?id=3" target="_blank" style="font-size:16px;color:#0c0c0c;">+more</a></span></h4>
       <div class="slideshow">
 	     <div style="display: block;">
-                         <dd><a href="/home/index/portal_show.html?id=10"></a><a href="/home/index/portal_show.html?id=10">银联推二维码支付标准 移动支付市场新一轮争夺</a><time>12-27</time>
+                         <dd><a href="/yjladmin/home/index/portal_show.html?id=10"></a><a href="/yjladmin/home/index/portal_show.html?id=10">银联推二维码支付标准 移动支付市场新一轮争夺</a><time>12-27</time>
            </dd>
-                        <dd><a href="/home/index/portal_show.html?id=11"></a><a href="/home/index/portal_show.html?id=11">支付宝支持人工窗口和自动售票机买火车票了</a><time>12-27</time>
+                        <dd><a href="/yjladmin/home/index/portal_show.html?id=11"></a><a href="/yjladmin/home/index/portal_show.html?id=11">支付宝支持人工窗口和自动售票机买火车票了</a><time>12-27</time>
            </dd>
-                        <dd><a href="/home/index/portal_show.html?id=13"></a><a href="/home/index/portal_show.html?id=13">海口美兰空港口岸率先实现微信支付宝缴税</a><time>12-27</time>
+                        <dd><a href="/yjladmin/home/index/portal_show.html?id=13"></a><a href="/yjladmin/home/index/portal_show.html?id=13">海口美兰空港口岸率先实现微信支付宝缴税</a><time>12-27</time>
            </dd>
-                        <dd><a href="/home/index/portal_show.html?id=21"></a><a href="/home/index/portal_show.html?id=21">支付宝双12为何敢玩“集四宝”？</a><time>12-27</time>
+                        <dd><a href="/yjladmin/home/index/portal_show.html?id=21"></a><a href="/yjladmin/home/index/portal_show.html?id=21">支付宝双12为何敢玩“集四宝”？</a><time>12-27</time>
            </dd>
-                        <dd><a href="/home/index/portal_show.html?id=24"></a><a href="/home/index/portal_show.html?id=24">南宁兴宁：开展农村电商培训</a><time>12-27</time>
+                        <dd><a href="/yjladmin/home/index/portal_show.html?id=24"></a><a href="/yjladmin/home/index/portal_show.html?id=24">南宁兴宁：开展农村电商培训</a><time>12-27</time>
            </dd>
-                        <dd><a href="/home/index/portal_show.html?id=35"></a><a href="/home/index/portal_show.html?id=35">5招一眼识别垃圾买家</a><time>12-27</time>
+                        <dd><a href="/yjladmin/home/index/portal_show.html?id=35"></a><a href="/yjladmin/home/index/portal_show.html?id=35">5招一眼识别垃圾买家</a><time>12-27</time>
            </dd>
                       </div>
       </div>
@@ -328,7 +274,7 @@
 </div>
 <div style="background-color: #eeeeee; padding-bottom: 15px;">
 <div style="width: 1200px; margin: 0 auto;">
-<!--[diy=ys_diy11]--><div id="ys_diy11" class="area"><div id="framepLh8no" class="cl_frame_bm index_dsxy frame move-span cl frame-1"><div class="title frame-title"><span class="titletext" style="font-size:24px;"><a href="/home/index/alonepage.html?id=5" target="_blank" style="color:rgb(97, 97, 97) !important;"><img src="/public/home/img/xuey.png" class="vm" alt="电商学院">电商学院</a></span><span class="subtitle" style="font-size:16px;float:right;">
+<!--[diy=ys_diy11]--><div id="ys_diy11" class="area"><div id="framepLh8no" class="cl_frame_bm index_dsxy frame move-span cl frame-1"><div class="title frame-title"><span class="titletext" style="font-size:24px;"><a href="/yjladmin/home/index/alonepage.html?id=5" target="_blank" style="color:rgb(97, 97, 97) !important;"><img src="/public/home/img/xuey.png" class="vm" alt="电商学院">电商学院</a></span><span class="subtitle" style="font-size:16px;float:right;">
 </span></div><div id="framepLh8no_left" class="column frame-1-c"><div id="framepLh8no_left_temp" class="move-span temp"></div><div id="portal_block_137" class="cl_block_bm block move-span"><div id="portal_block_137_content" class="dxb_bc"><div class="portal_block_summary"><div class="ag-content-customer">
     <div class="ag-content-customer-ele">
         <div class="ag-content-customer-ele-shadow"></div>
@@ -618,48 +564,6 @@
 <div id="portal_block_102_content" class="dxb_bc"> 
 <div class="shich-box wth">
    
-      <div class="img-box">
-    <img src="/public/assets/img/adver/20170103\9921834f6088d0bb5bc7c0d3652aa5e0.jpg" width="380" height="245">
-    <div class="bg-color">
-    <h4>人才培训</h4>
-    <p></p>    
-    </div>
-   </div>
-      <div class="img-box">
-    <img src="/public/assets/img/adver/20170103\dea6804d495db595f02efb6367e0f2ad.jpg" width="380" height="245">
-    <div class="bg-color">
-    <h4>运营营销</h4>
-    <p></p>    
-    </div>
-   </div>
-      <div class="img-box">
-    <img src="/public/assets/img/adver/20170103\be9aac4599eea3c8470c0050694ab568.jpg" width="380" height="245">
-    <div class="bg-color">
-    <h4>数据分析</h4>
-    <p></p>    
-    </div>
-   </div>
-      <div class="img-box">
-    <img src="/public/assets/img/adver/20170103\c1b41705ee5c4867cac50deec5f174d3.jpg" width="380" height="245">
-    <div class="bg-color">
-    <h4>技术咨询</h4>
-    <p></p>    
-    </div>
-   </div>
-      <div class="img-box">
-    <img src="/public/assets/img/adver/20170103\33479ebd3b4d2dd5f656eecb69209c79.jpg" width="380" height="245">
-    <div class="bg-color">
-    <h4>创业孵化</h4>
-    <p></p>    
-    </div>
-   </div>
-      <div class="img-box">
-    <img src="/public/assets/img/adver/20170103\432a7b013eaebb5536c552b1c5f01299.jpg" width="380" height="245">
-    <div class="bg-color">
-    <h4>物流配套</h4>
-    <p></p>    
-    </div>
-   </div>
    
    </div></div></div></div></div></div><!--[/diy]-->
 </div>
@@ -770,7 +674,7 @@
 
 <div style="background-color: #eeeeee; padding-bottom: 15px;">
 <div style="width: 1200px; margin: 0 auto;">
-<!--[diy=ys_diy13]--><div id="ys_diy13" class="area"><div id="frameuwCb5S" class="cl_frame_bm container frame move-span cl frame-1"><div class="frame-title title" style="background-image:none;background-repeat:repeat;background-color:transparent;"><span class="titletext" style="font-size:24px;"><a href="http://www.nnecps.com/portal.php?mod=list&amp;catid=31" target="_blank" style="color:rgb(97, 97, 97) !important;"><img src="/public/home/img/xuey.png" class="vm" alt="产业基地">产业基地</a></span><span class="subtitle" style="font-size:14px;float:right;"><a href="/home/index/base.html" target="_blank" style="color:rgb(97, 97, 97) !important;">+more</a></span></div><div id="frameuwCb5S_left" class="column frame-1-c"><div id="frameuwCb5S_left_temp" class="move-span temp"></div><div id="portal_block_138" class="block move-span"><div id="portal_block_138_content" class="dxb_bc"><script type="text/javascript" src="/public/home/img/jquery.mixitup.min.js"></script>
+<!--[diy=ys_diy13]--><div id="ys_diy13" class="area"><div id="frameuwCb5S" class="cl_frame_bm container frame move-span cl frame-1"><div class="frame-title title" style="background-image:none;background-repeat:repeat;background-color:transparent;"><span class="titletext" style="font-size:24px;"><a href="http://www.nnecps.com/portal.php?mod=list&amp;catid=31" target="_blank" style="color:rgb(97, 97, 97) !important;"><img src="/public/home/img/xuey.png" class="vm" alt="产业基地">产业基地</a></span><span class="subtitle" style="font-size:14px;float:right;"><a href="/yjladmin/home/index/base.html" target="_blank" style="color:rgb(97, 97, 97) !important;">+more</a></span></div><div id="frameuwCb5S_left" class="column frame-1-c"><div id="frameuwCb5S_left_temp" class="move-span temp"></div><div id="portal_block_138" class="block move-span"><div id="portal_block_138_content" class="dxb_bc"><script type="text/javascript" src="/public/home/img/jquery.mixitup.min.js"></script>
 
 <ul class="clearfix" id="filters">
 <li><span class="filter active" onclick=" $('.changye').show(); $('.yuanqu').show(); " >全部</span></li><li><span class="filter" onclick=" $('.changye').fadeOut('slow'); $('.yuanqu').fadeIn('slow'); ">产业园</span></li><li><span class="filter"  onclick="$('.yuanqu').fadeOut('slow') ;$('.changye').fadeIn('slow'); ">创客空间</span></li></ul>
@@ -785,7 +689,7 @@
 <div id="portal_block_139" class="block move-span">
 <div id="portal_block_139_content" class="dxb_bc">
 <div id="portfoliolist">
-        <a href="/home/index/base_show.html?id=23" style="color: rgb(255, 255, 255);" target="_blank" class="changye">
+        <a href="/yjladmin/home/index/base_show.html?id=23" style="color: rgb(255, 255, 255);" target="_blank" class="changye">
     <div class="portfolio mix_all"  style=" display: inline-block; opacity: 1;">
         <div class="portfolio-wrapper">
             <img src="/public/assets/img/product/20170103\b5ad762a113ca65225bfefbe6fd089ce.jpg" alt="" style="top: 0px;">
@@ -796,7 +700,7 @@
         </div>
     </div>
     </a>
-        <a href="/home/index/base_show.html?id=24" style="color: rgb(255, 255, 255);" target="_blank" class="yuanqu" >
+        <a href="/yjladmin/home/index/base_show.html?id=24" style="color: rgb(255, 255, 255);" target="_blank" class="yuanqu" >
     <div class="portfolio mix_all"  style=" display: inline-block; opacity: 1;">
         <div class="portfolio-wrapper">
             <img src="/public/assets/img/product/20170103\4b050c4e5deaf7b217f0b63f1b078d93.jpg" alt="" style="top: 0px;">
@@ -807,7 +711,7 @@
         </div>
     </div>
     </a>
-        <a href="/home/index/base_show.html?id=25" style="color: rgb(255, 255, 255);" target="_blank" class="yuanqu" >
+        <a href="/yjladmin/home/index/base_show.html?id=25" style="color: rgb(255, 255, 255);" target="_blank" class="yuanqu" >
     <div class="portfolio mix_all"  style=" display: inline-block; opacity: 1;">
         <div class="portfolio-wrapper">
             <img src="/public/assets/img/product/20170103\7d457737b3fb01c1ffb5a789d670d02f.jpg" alt="" style="top: 0px;">
@@ -818,7 +722,7 @@
         </div>
     </div>
     </a>
-        <a href="/home/index/base_show.html?id=26" style="color: rgb(255, 255, 255);" target="_blank" class="yuanqu" >
+        <a href="/yjladmin/home/index/base_show.html?id=26" style="color: rgb(255, 255, 255);" target="_blank" class="yuanqu" >
     <div class="portfolio mix_all"  style=" display: inline-block; opacity: 1;">
         <div class="portfolio-wrapper">
             <img src="/public/assets/img/product/20170103\cbbf7c64904592b2ad0f46e8ae56d5ff.jpg" alt="" style="top: 0px;">
